@@ -1,0 +1,1 @@
+/Users/Ryotai/Repositories/dotfiles/nvim/marking.vim

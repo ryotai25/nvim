@@ -1,0 +1,1 @@
+/Users/Ryotai/Repositories/dotfiles/nvim/plugins/markdown.vim
