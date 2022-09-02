@@ -1,7 +1,6 @@
 let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
 let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 
-" let g:tex_flavor = 'latex'
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
