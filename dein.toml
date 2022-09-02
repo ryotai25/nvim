@@ -24,11 +24,11 @@ hook_add = '''
     source ~/.config/nvim/plugins/translator.vim
 '''
 
-[[plugins]]
-repo = 'mhinz/vim-startify'
-hook_add = '''
-    source ~/.config/nvim/plugins/startify.vim
-'''
+# [[plugins]]
+# repo = 'mhinz/vim-startify'
+# hook_add = '''
+#     source ~/.config/nvim/plugins/startify.vim
+# '''
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
@@ -132,6 +132,10 @@ repo = 'theblob42/drex.nvim'
 
 [[plugins]]
 repo = 'glepnir/dashboard-nvim'
+hook_add = '''
+    lua require("startup")
+'''
+
 
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'

@@ -55,5 +55,6 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 nnoremap <silent> <leader>r :IronFocus<CR>
 
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+cnoremap 3b3b <c-u>undo<CR>
 
 set laststatus=3

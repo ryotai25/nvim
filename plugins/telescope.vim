@@ -7,14 +7,23 @@ require('telescope').setup{
         mappings = {
           n = {
             ["q"] = actions.close,
-          },
+            },
         },
+    },
+    extensions = {
+        project = {
+            base_dirs = {
+                '~/.julia/dev/'
+            }
+        }
     }
 }
-require('telescope').load_extension('z')
-require('telescope').load_extension('ghq')
-require('telescope').load_extension("file_browser")
-require('telescope').load_extension("frecency")
+require'telescope'.load_extension('z')
+require'telescope'.load_extension('ghq')
+require'telescope'.load_extension("file_browser")
+require'telescope'.load_extension("frecency")
+require'telescope'.load_extension('project')
+
 EOF
 nnoremap <leader>t <cmd>Telescope<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -22,6 +31,7 @@ nnoremap <leader>fr <cmd>Telescope frecency<cr>
 nnoremap <leader>x <cmd>Telescope file_browser<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>pr <cmd>Telescope project<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap <silent> <leader>z :Telescope z list<CR>
