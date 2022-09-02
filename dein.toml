@@ -24,12 +24,6 @@ hook_add = '''
     source ~/.config/nvim/plugins/translator.vim
 '''
 
-# [[plugins]]
-# repo = 'mhinz/vim-startify'
-# hook_add = '''
-#     source ~/.config/nvim/plugins/startify.vim
-# '''
-
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 do = 'TSUpdate'
@@ -85,6 +79,7 @@ hook_add = '''
     lua require('neogit').setup{}
 '''
 
+# 依存先
 [[plugins]]
 repo = 'nvim-lua/popup.nvim'
 
@@ -136,9 +131,15 @@ hook_add = '''
     lua require("startup")
 '''
 
-
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
 hook_add = '''
     lua require('gitsigns').setup()
 '''
+
+[[plugins]]
+repo = 'chentoast/marks.nvim'
+hook_add = '''
+    lua require('marks').setup()
+'''
+

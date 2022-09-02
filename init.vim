@@ -49,12 +49,14 @@ let g:tokyonight_style = 'storm'
 colorscheme tokyonight
 
 source ~/.config/nvim/mapping.vim
-source ~/.config/nvim/marking.vim
+" source ~/.config/nvim/marking.vim
 
-nnoremap <silent> <leader>lg :LazyGit<CR>
-nnoremap <silent> <leader>r :IronFocus<CR>
+nnoremap <silent> <leader>lg <cmd>LazyGit<CR>
+nnoremap <silent> <leader>r <cmd>IronFocus<CR>
 
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" 起動時にキーが入力されてしまう本体の不具合？を回避
 cnoremap 3b3b <c-u>undo<CR>
 
 set laststatus=3
