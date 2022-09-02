@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'lervag/vimtex'
-on_ft = 'tex'
+on_ft = ['tex', 'latex']
 hook_add = '''
     source ~/.config/nvim/plugins/latex.vim
 '''
@@ -14,7 +14,10 @@ hook_add = '''
 
 [[plugins]]
 repo = 'JuliaEditorSupport/julia-vim'
-on_ft = ['julia', 'tex']
+on_ft = ['julia', 'tex', 'latex']
+hook_add = '''
+    let g:latex_to_unicode_file_types = ['julia', 'tex', 'latex']
+'''
 
 [[plugins]]
 repo = 'jalvesaq/Nvim-R'

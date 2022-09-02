@@ -12,6 +12,7 @@ nnoremap <C-k> gT
 nnoremap <S-Left> gT
 nnoremap <S-Right> gt
 
+" opt + ↓ ↑ ← →
 nnoremap ∆ <C-w>j
 nnoremap ˚ <C-w>k
 nnoremap ˙ <C-w>h
