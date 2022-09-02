@@ -20,6 +20,13 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'hasundue/vim-pluto'
+on_ft = 'julia'
+
+[[plugins]]
 repo = 'jalvesaq/Nvim-R'
 on_ft = 'r'
 

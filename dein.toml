@@ -50,12 +50,6 @@ repo = 'nvim-lua/plenary.nvim'
 repo = 'kyazdani42/nvim-web-devicons'
 
 [[plugins]]
-repo = 'vim-denops/denops.vim'
-
-[[plugins]]
-repo = 'hasundue/vim-pluto'
-
-[[plugins]]
 repo = 'hkupty/iron.nvim'
 hook_add = '''
     lua require('iron')
