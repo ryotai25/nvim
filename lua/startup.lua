@@ -28,6 +28,7 @@ db.custom_center = {
   shortcut = 'SPC f w'},
   {icon = '  ',
   desc = 'Open Personal dotfiles                  ',
-  action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
+  -- action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
+  action = 'Telescope dotfiles path=' .. home ..'/',
   shortcut = 'SPC f d'},
 }
