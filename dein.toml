@@ -73,12 +73,6 @@ hook_add = '''
     source ~/.config/nvim/plugins/lazygit.vim
 '''
 
-[[plugins]]
-repo = 'TimUntersberger/neogit'
-hook_add = '''
-    lua require('neogit').setup{}
-'''
-
 # 依存先
 [[plugins]]
 repo = 'nvim-lua/popup.nvim'
@@ -142,4 +136,3 @@ repo = 'chentoast/marks.nvim'
 hook_add = '''
     lua require('marks').setup()
 '''
-

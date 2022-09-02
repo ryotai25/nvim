@@ -20,4 +20,4 @@ repo = 'sainnhe/everforest'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
-repo = 'shaunsingh/solarized.nvim'
+repo = 'ishan9299/nvim-solarized-lua'
