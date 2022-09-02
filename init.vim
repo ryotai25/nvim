@@ -21,6 +21,8 @@ endif
 filetype plugin indent on
 syntax enable
 
+colorscheme tokyonight
+
 set nobackup
 set noswapfile
 set hidden
@@ -44,15 +46,7 @@ autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadvie
 " Don't save options.
 set viewoptions-=options
 
-lua vim.g.tokyonight_colors = { border = "dark3" }
-let g:tokyonight_style = 'storm'
-colorscheme tokyonight
-
 source ~/.config/nvim/mapping.vim
-" source ~/.config/nvim/marking.vim
-
-nnoremap <silent> <leader>lg <cmd>LazyGit<CR>
-nnoremap <silent> <leader>r <cmd>IronFocus<CR>
 
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 

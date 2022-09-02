@@ -53,6 +53,7 @@ repo = 'kyazdani42/nvim-web-devicons'
 repo = 'hkupty/iron.nvim'
 hook_add = '''
     lua require('iron')
+    nnoremap <silent> <leader>r <cmd>IronFocus<CR>
 '''
 
 [[plugins]]
