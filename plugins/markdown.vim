@@ -1,1 +1,1 @@
-/Users/Ryotai/Repositories/dotfiles/nvim/plugins/markdown.vim
+let g:preview_markdown_parser='glow'

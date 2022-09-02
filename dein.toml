@@ -1,1 +1,156 @@
-/Users/Ryotai/Repositories/dotfiles/nvim/dein.toml
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+[[plugins]]
+repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'shinchu/lightline-gruvbox.vim'
+
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+
+[[plugins]]
+repo = 'wadackel/vim-dogrun'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merge = 0
+rev = "release"
+hook_add = '''
+    source ~/.config/nvim/plugins/coc.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'qpkorr/vim-renamer'
+
+[[plugins]]
+repo = 'voldikss/vim-translator'
+hook_add = '''
+    source ~/.config/nvim/plugins/translator.vim
+'''
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+hook_add = '''
+    source ~/.config/nvim/plugins/startify.vim
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+do = 'TSUpdate'
+
+[[plugins]]
+repo = 'ryotai25/memolist.vim'
+hook_add = '''
+    source ~/.config/nvim/plugins/memolist.vim
+'''
+
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+
+[[plugins]]
+repo = 'mattn/vim-findroot'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'hasundue/vim-pluto'
+
+[[plugins]]
+repo = 'hkupty/iron.nvim'
+
+[[plugins]]
+repo = 'akinsho/toggleterm.nvim'
+
+[[plugins]]
+repo = 'kdheepak/lazygit.nvim'
+
+[[plugins]]
+repo = 'TimUntersberger/neogit'
+
+[[plugins]]
+repo = 'nvim-lua/popup.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope-z.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope-ghq.nvim'
+
+# [[plugins]]
+# repo = 'SirVer/ultisnips'
+
+[[plugins]]
+ repo = 'ryotai25/vim-snippets'
+
+[[plugins]]
+ repo = 'folke/todo-comments.nvim'
+hook_add = '''
+    lua require('todo-comments').setup{}
+'''
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+hook_add = '''
+    source ~/.config/nvim/plugins/telescope.vim
+'''
+
+[[plugins]]
+repo = 'akinsho/bufferline.nvim'
+depends = ['kyazdani42/nvim-web-devicons']
+
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+
+[[plugins]]
+repo = 'Pocco81/true-zen.nvim'
+hook_add = '''
+    lua require("true-zen").setup{}
+'''
+
+[[plugins]]
+repo = 'kkharji/sqlite.lua'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope-frecency.nvim'
+hook_add = '''
+    lua require"telescope".load_extension("frecency")
+'''
+
+[[plugins]]
+repo = 'nvim-telescope/telescope-file-browser.nvim'
+hook_add = '''
+    lua require"telescope".load_extension("file_browser")
+'''
+
+[[plugins]]
+repo = 'kyazdani42/nvim-tree.lua'
+
+[[plugins]]
+repo = 'theblob42/drex.nvim'
+
+[[plugins]]
+repo = 'glepnir/dashboard-nvim'
+
+[[plugins]]
+repo = 'lewis6991/gitsigns.nvim'

@@ -1,1 +1,10 @@
-/Users/Ryotai/Repositories/dotfiles/nvim/plugins/lightline.vim
+let g:lightline = {
+      \ 'colorscheme': '',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'gitbranch'] ],
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }

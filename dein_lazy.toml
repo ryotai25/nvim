@@ -1,1 +1,37 @@
-/Users/Ryotai/Repositories/dotfiles/nvim/dein_lazy.toml
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+hook_add = '''
+    source ~/.config/nvim/plugins/latex.vim
+'''
+
+[[plugins]]
+repo = 'skanehira/preview-markdown.vim'
+on_ft = 'md'
+hook_add = '''
+    let g:preview_markdown_parser='glow'
+'''
+
+[[plugins]]
+repo = 'JuliaEditorSupport/julia-vim'
+on_ft = ['julia', 'tex']
+
+[[plugins]]
+repo = 'jalvesaq/Nvim-R'
+on_ft = 'r'
+
+[[plugins]]
+repo = 'dag/vim-fish'
+on_ft = 'fish'
+
+[[plugins]]
+repo = 'stevearc/vim-arduino'
+on_ft = 'ino'
+
+[[plugins]]
+repo = 'vim-pandoc/vim-pandoc-syntax'
+on_ft = 'quarto'
+
+[[plugins]]
+repo = 'quarto-dev/quarto-vim'
+on_ft = 'quarto'

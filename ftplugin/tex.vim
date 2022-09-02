@@ -1,1 +1,2 @@
-/Users/Ryotai/Repositories/dotfiles/nvim/ftplugin/tex.vim
+setlocal shiftwidth=2
+setlocal tabstop=2
