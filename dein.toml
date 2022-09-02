@@ -1,19 +1,4 @@
 [[plugins]]
-repo = 'joshdick/onedark.vim'
-
-[[plugins]]
-repo = 'morhetz/gruvbox'
-
-[[plugins]]
-repo = 'shinchu/lightline-gruvbox.vim'
-
-[[plugins]]
-repo = 'arcticicestudio/nord-vim'
-
-[[plugins]]
-repo = 'wadackel/vim-dogrun'
-
-[[plugins]]
 repo = 'neoclide/coc.nvim'
 merge = 0
 rev = "release"
@@ -63,9 +48,6 @@ repo = 'mattn/vim-findroot'
 
 [[plugins]]
 repo = 'nvim-lua/plenary.nvim'
-
-[[plugins]]
-repo = 'folke/tokyonight.nvim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'

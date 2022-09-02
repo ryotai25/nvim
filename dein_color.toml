@@ -1,0 +1,18 @@
+# colorschemes
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+[[plugins]]
+repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+
+[[plugins]]
+repo = 'wadackel/vim-dogrun'
+
+[[plugins]]
+repo = 'sainnhe/everforest'
