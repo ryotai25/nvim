@@ -13,6 +13,8 @@ require('telescope').setup{
 }
 require('telescope').load_extension('z')
 require('telescope').load_extension('ghq')
+require('telescope').load_extension("file_browser")
+require('telescope').load_extension("frecency")
 EOF
 nnoremap <leader>t <cmd>Telescope<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

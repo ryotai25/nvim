@@ -33,6 +33,9 @@ hook_add = '''
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 do = 'TSUpdate'
+hook_add = '''
+    lua require('treesitter')
+'''
 
 [[plugins]]
 repo = 'ryotai25/memolist.vim'
@@ -60,24 +63,30 @@ repo = 'hasundue/vim-pluto'
 
 [[plugins]]
 repo = 'hkupty/iron.nvim'
+hook_add = '''
+    lua require('iron')
+'''
 
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
+hook_add = '''
+    lua require('toggle_term')
+'''
 
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
+hook_add = '''
+    source ~/.config/nvim/plugins/lazygit.vim
+'''
 
 [[plugins]]
 repo = 'TimUntersberger/neogit'
+hook_add = '''
+    lua require('neogit').setup{}
+'''
 
 [[plugins]]
 repo = 'nvim-lua/popup.nvim'
-
-[[plugins]]
-repo = 'nvim-telescope/telescope-z.nvim'
-
-[[plugins]]
-repo = 'nvim-telescope/telescope-ghq.nvim'
 
 # [[plugins]]
 # repo = 'SirVer/ultisnips'
@@ -92,17 +101,16 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'nvim-telescope/telescope.nvim'
+repo = 'akinsho/bufferline.nvim'
 hook_add = '''
-    source ~/.config/nvim/plugins/telescope.vim
+    lua require('bufferl')
 '''
 
 [[plugins]]
-repo = 'akinsho/bufferline.nvim'
-depends = ['kyazdani42/nvim-web-devicons']
-
-[[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
+hook_add = '''
+    lua require('lualine').setup{ options = { component_separators = '|' , section_separators = { left = '', right = ''} } }
+'''
 
 [[plugins]]
 repo = 'Pocco81/true-zen.nvim'
@@ -114,19 +122,10 @@ hook_add = '''
 repo = 'kkharji/sqlite.lua'
 
 [[plugins]]
-repo = 'nvim-telescope/telescope-frecency.nvim'
-hook_add = '''
-    lua require"telescope".load_extension("frecency")
-'''
-
-[[plugins]]
-repo = 'nvim-telescope/telescope-file-browser.nvim'
-hook_add = '''
-    lua require"telescope".load_extension("file_browser")
-'''
-
-[[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
+hook_add = '''
+    lua require("nvim-tree").setup{}
+'''
 
 [[plugins]]
 repo = 'theblob42/drex.nvim'
@@ -136,3 +135,6 @@ repo = 'glepnir/dashboard-nvim'
 
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
+hook_add = '''
+    lua require('gitsigns').setup()
+'''

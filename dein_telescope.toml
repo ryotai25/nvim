@@ -1,0 +1,17 @@
+[[plugins]]
+repo = 'nvim-telescope/telescope-z.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope-ghq.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope-frecency.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope-file-browser.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+hook_add = '''
+    source ~/.config/nvim/plugins/telescope.vim
+'''
