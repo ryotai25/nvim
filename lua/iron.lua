@@ -20,18 +20,14 @@ iron.setup {
   -- Iron doesn't set keymaps by default anymore. Set them here
   -- or use `should_map_plug = true` and map from you vim files
   keymaps = {
-    send_motion = "<space>sc",
-    visual_send = "<space>sc",
-    send_file = "<space>sf",
-    send_line = "<space>sl",
-    send_mark = "<space>sm",
-    mark_motion = "<space>mc",
-    mark_visual = "<space>mc",
-    remove_mark = "<space>md",
-    cr = "<space>s<cr>",
-    interrupt = "<space>s<space>",
-    exit = "<space>sq",
-    clear = "<space>cl",
+    send_motion = "<leader>sc",
+    visual_send = "<leader>sc",
+    send_file = "<leader>sf",
+    send_line = "<leader>ss",
+    cr = "<leader>s<cr>",
+    interrupt = "<leader>s<space>",
+    exit = "<leader>sq",
+    clear = "<leader>cl",
   },
   -- If the highlight is on, you can change how it looks
   -- For the available options, check nvim_set_hl

@@ -7,18 +7,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tpope/vim-commentary'
-
-[[plugins]]
-repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
-
-[[plugins]]
-repo = 'qpkorr/vim-renamer'
-
-[[plugins]]
 repo = 'voldikss/vim-translator'
 hook_add = '''
     source ~/.config/nvim/plugins/translator.vim
@@ -30,6 +18,8 @@ do = 'TSUpdate'
 hook_add = '''
     lua require('treesitter')
 '''
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-textobjects'
 
 [[plugins]]
 repo = 'ryotai25/memolist.vim'
@@ -77,14 +67,12 @@ repo = 'nvim-lua/popup.nvim'
 
 [[plugins]]
  repo = 'folke/todo-comments.nvim'
-hook_add = '''
-    lua require('todo-comments').setup{}
-'''
+hook_add = "lua require('todo-comments').setup()"
 
 [[plugins]]
 repo = 'akinsho/bufferline.nvim'
 hook_add = '''
-    lua require('bufferl')
+lua require('bufferl')
 '''
 
 [[plugins]]
@@ -95,9 +83,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Pocco81/true-zen.nvim'
-hook_add = '''
-    lua require("true-zen").setup{}
-'''
+hook_add = "lua require('true-zen').setup()"
 
 [[plugins]]
 repo = 'kkharji/sqlite.lua'
@@ -105,7 +91,7 @@ repo = 'kkharji/sqlite.lua'
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
 hook_add = '''
-    lua require("nvim-tree").setup{}
+lua require('nvim-tree').setup{}
 '''
 
 [[plugins]]
@@ -114,17 +100,26 @@ repo = 'theblob42/drex.nvim'
 [[plugins]]
 repo = 'glepnir/dashboard-nvim'
 hook_add = '''
-    lua require("startup")
+    lua require('startup')
 '''
 
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
-hook_add = '''
-    lua require('gitsigns').setup()
-'''
+hook_add = "lua require('gitsigns').setup()"
 
 [[plugins]]
 repo = 'chentoast/marks.nvim'
+hook_add = "lua require('marks').setup()"
+
+[[plugins]]
+repo = 'unblevable/quick-scope'
+
+[[plugins]]
+repo = 'kylechui/nvim-surround'
 hook_add = '''
-    lua require('marks').setup()
+lua require('nvim-surround').setup()
 '''
+
+[[plugins]]
+repo = 'numToStr/Comment.nvim'
+hook_add = "lua require('Comment').setup()"
