@@ -20,6 +20,9 @@ endif
 filetype plugin indent on
 syntax enable
 
+" FIX: ボーダー動作していない
+lua vim.g.tokyonight_colors = { border = "dark3" }
+
 colorscheme tokyonight
 
 set nobackup

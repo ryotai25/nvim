@@ -18,6 +18,7 @@ do = 'TSUpdate'
 hook_add = '''
     lua require('treesitter')
 '''
+
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-textobjects'
 
