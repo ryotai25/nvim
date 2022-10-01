@@ -1,8 +1,7 @@
 [[plugins]]
 repo = 'folke/tokyonight.nvim'
 hook_add = '''
-    lua vim.g.tokyonight_colors = { border = "dark3" }
-    let g:tokyonight_style = 'storm'
+lua require("tokyo_color")
 '''
 
 [[plugins]]

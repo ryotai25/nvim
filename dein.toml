@@ -108,9 +108,9 @@ hook_add = '''
 repo = 'lewis6991/gitsigns.nvim'
 hook_add = "lua require('gitsigns').setup()"
 
-[[plugins]]
-repo = 'chentoast/marks.nvim'
-hook_add = "lua require('marks').setup()"
+# [[plugins]]
+# repo = 'chentoast/marks.nvim'
+# hook_add = "lua require('marks').setup()"
 
 [[plugins]]
 repo = 'unblevable/quick-scope'

@@ -20,11 +20,6 @@ endif
 filetype plugin indent on
 syntax enable
 
-" FIX: ボーダー動作していない
-lua vim.g.tokyonight_colors = { border = "dark3" }
-
-colorscheme tokyonight
-
 set nobackup
 set noswapfile
 set hidden
@@ -36,12 +31,6 @@ set foldlevelstart=20
 set breakindent
 set breakindentopt=shift:0
 
-" LaTexのquickfixで画面が狭くならないようにする
-au FileType qf call AdjustWindowHeight(2, 10)
-function! AdjustWindowHeight(minheight, maxheight)
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
-
 " Save fold settings.
 autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
 autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
@@ -51,8 +40,11 @@ set viewoptions-=options
 source ~/.config/nvim/mapping.vim
 
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+set laststatus=3
 
 " 起動時にキーが入力されてしまう本体の不具合？を回避
 cnoremap 3b3b <c-u>undo<CR>
 
-set laststatus=3
+"日本語の行の連結時には空白を入力しない
+set formatoptions+=mM"日本語の行の連結時には空白を入力しない
+
