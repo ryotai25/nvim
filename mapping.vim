@@ -24,3 +24,6 @@ tnoremap ˙ <C-w>h
 tnoremap ¬ <C-w>l
 
 nnoremap <C-w><C-t> <C-w>T
+
+cnoremap 3b3b <c-u>undo<CR> 
+" 起動時にキーが入力されてしまう本体の不具合？を回避

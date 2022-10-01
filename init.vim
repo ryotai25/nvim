@@ -30,21 +30,10 @@ set shiftwidth=4
 set foldlevelstart=20
 set breakindent
 set breakindentopt=shift:0
-
-" Save fold settings.
-autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
-" Don't save options.
-set viewoptions-=options
-
+set formatoptions+=mM "日本語の行の連結時には空白を入力しない
+set laststatus=3 "status bar を一つだけ表示
 source ~/.config/nvim/mapping.vim
 
-imap <C-j> <Plug>(coc-snippets-expand-jump)
-set laststatus=3
-
-" 起動時にキーが入力されてしまう本体の不具合？を回避
-cnoremap 3b3b <c-u>undo<CR>
-
-"日本語の行の連結時には空白を入力しない
-set formatoptions+=mM"日本語の行の連結時には空白を入力しない
-
+autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif " Save fold settings.
+autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
+set viewoptions-=options " Don't save options.
