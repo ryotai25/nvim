@@ -16,7 +16,7 @@ hook_add = '''
 repo = 'nvim-treesitter/nvim-treesitter'
 do = 'TSUpdate'
 lua_add = '''
-    require('treesitter')
+require('nvim-treesitter_config')
 '''
 
 [[plugins]]
@@ -36,6 +36,9 @@ repo = 'nvim-lua/plenary.nvim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
+lua_add = '''
+require'nvim-web-devicons'.setup {default = true}
+'''
 
 [[plugins]]
 repo = 'hkupty/iron.nvim'
@@ -47,7 +50,7 @@ hook_add = '''
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
 lua_add = '''
-    require('toggle_term')
+require('toggleterm')
 '''
 
 [[plugins]]
@@ -75,7 +78,7 @@ require('todo-comments').setup()
 [[plugins]]
 repo = 'akinsho/bufferline.nvim'
 lua_add = '''
-require('bufferl')
+require('bufferline_config')
 '''
 
 [[plugins]]
@@ -105,7 +108,7 @@ repo = 'theblob42/drex.nvim'
 [[plugins]]
 repo = 'glepnir/dashboard-nvim'
 lua_add = '''
-require('startup')
+require('dashboard_config')
 '''
 
 [[plugins]]

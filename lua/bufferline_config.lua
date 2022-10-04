@@ -1,4 +1,4 @@
-require'nvim-web-devicons'.setup {default = true}
+-- require'nvim-web-devicons'.setup {default = true}
 vim.opt.termguicolors = true
 require("bufferline").setup{
     options = {

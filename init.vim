@@ -33,8 +33,9 @@ set breakindent
 set breakindentopt=shift:0 " wrapした行もインデントする
 set formatoptions+=mM "日本語の行の連結時には空白を入力しない
 set laststatus=3 "status bar を一つだけ表示
-source ~/.config/nvim/mapping.vim
 
 autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif " Save fold settings.
 autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
 set viewoptions-=options " Don't save options.
+
+source ~/.config/nvim/mapping.vim

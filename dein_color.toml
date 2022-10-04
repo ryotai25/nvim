@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'folke/tokyonight.nvim'
-hook_add = '''
-lua require("tokyo_color")
+lua_add = '''
+require("tokyonight_config")
 '''
 
 [[plugins]]
