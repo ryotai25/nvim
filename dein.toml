@@ -15,8 +15,8 @@ hook_add = '''
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 do = 'TSUpdate'
-hook_add = '''
-    lua require('treesitter')
+lua_add = '''
+    require('treesitter')
 '''
 
 [[plugins]]
@@ -46,8 +46,8 @@ hook_add = '''
 
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
-hook_add = '''
-    lua require('toggle_term')
+lua_add = '''
+    require('toggle_term')
 '''
 
 [[plugins]]
@@ -68,31 +68,35 @@ repo = 'nvim-lua/popup.nvim'
 
 [[plugins]]
  repo = 'folke/todo-comments.nvim'
-hook_add = "lua require('todo-comments').setup()"
+lua_add = '''
+require('todo-comments').setup()
+'''
 
 [[plugins]]
 repo = 'akinsho/bufferline.nvim'
-hook_add = '''
-lua require('bufferl')
+lua_add = '''
+require('bufferl')
 '''
 
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
-hook_add = '''
-    lua require('lualine').setup{ options = { component_separators = '|' , section_separators = { left = '', right = ''} } }
+lua_add = '''
+    require('lualine').setup{ options = { component_separators = '|' , section_separators = { left = '', right = ''} } }
 '''
 
 [[plugins]]
 repo = 'Pocco81/true-zen.nvim'
-hook_add = "lua require('true-zen').setup()"
+lua_add = '''
+require('true-zen').setup()
+'''
 
 [[plugins]]
 repo = 'kkharji/sqlite.lua'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
-hook_add = '''
-lua require('nvim-tree').setup{}
+lua_add = '''
+require('nvim-tree').setup{}
 '''
 
 [[plugins]]
@@ -100,13 +104,15 @@ repo = 'theblob42/drex.nvim'
 
 [[plugins]]
 repo = 'glepnir/dashboard-nvim'
-hook_add = '''
-    lua require('startup')
+lua_add = '''
+require('startup')
 '''
 
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
-hook_add = "lua require('gitsigns').setup()"
+lua_add = '''
+require('gitsigns').setup()
+'''
 
 # [[plugins]]
 # repo = 'chentoast/marks.nvim'
@@ -117,14 +123,18 @@ repo = 'unblevable/quick-scope'
 
 [[plugins]]
 repo = 'kylechui/nvim-surround'
-hook_add = '''
-lua require('nvim-surround').setup()
+lua_add = '''
+require('nvim-surround').setup()
 '''
 
 [[plugins]]
 repo = 'numToStr/Comment.nvim'
-hook_add = "lua require('Comment').setup()"
+lua_add = '''
+require('Comment').setup()
+'''
 
 [[plugins]]
 repo = 'levouh/tint.nvim'
-hook_add = "lua require('tint').setup()"
+lua_add = '''
+require('tint').setup()
+'''
