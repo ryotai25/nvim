@@ -69,6 +69,7 @@ require'telescope'.load_extension('project')
 require'telescope'.load_extension('command_palette')
 EOF
 nnoremap <leader>t <cmd>Telescope<cr>
+nnoremap <leader>tt <cmd>TodoTelescope<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fr <cmd>Telescope frecency<cr>
 nnoremap <leader>x <cmd>Telescope file_browser<cr>

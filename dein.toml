@@ -124,3 +124,7 @@ lua require('nvim-surround').setup()
 [[plugins]]
 repo = 'numToStr/Comment.nvim'
 hook_add = "lua require('Comment').setup()"
+
+[[plugins]]
+repo = 'levouh/tint.nvim'
+hook_add = "lua require('tint').setup()"
