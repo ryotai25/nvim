@@ -1,5 +1,6 @@
 
 local opt = vim.opt
+local api = vim.api
 
 opt.mouse = ''
 opt.laststatus = 3
@@ -15,17 +16,9 @@ opt.breakindent = true
 opt.breakindentopt = {'shift:0'} --  wrapした行もインデントする
 opt.formatoptions : append('mM')  -- 日本語の行の連結時には空白を入力しない
 
-vim.api.nvim_exec( [[
+api.nvim_exec( [[
 autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif " Save fold settings.
 autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
 ]], false)
--- -- vim.api.nvim_exec( [[
--- -- ]], false)
---
--- -- opt.viewoptions-=options " Don't save options.
 opt.viewoptions: remove('options')
 -- " Don't save options.
-
-vim.api.nvim_exec( [[
-source ~/.config/nvim/mapping.vim
-]], false)
