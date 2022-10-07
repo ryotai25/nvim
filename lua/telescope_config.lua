@@ -1,6 +1,3 @@
-
-
-lua <<EOF
 local actions = require('telescope.actions')
 require('telescope').setup{
     defaults = {
@@ -67,17 +64,19 @@ require'telescope'.load_extension("file_browser")
 require'telescope'.load_extension("frecency")
 require'telescope'.load_extension('project')
 require'telescope'.load_extension('command_palette')
-EOF
-nnoremap <leader>t <cmd>Telescope<cr>
-nnoremap <leader>tt <cmd>TodoTelescope<cr>
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fr <cmd>Telescope frecency<cr>
-nnoremap <leader>x <cmd>Telescope file_browser<cr>
-nnoremap <leader>g <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>pr <cmd>Telescope project<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>c <cmd>Telescope command_palette<cr>
 
-nnoremap <silent> <leader>z <cmd>Telescope z list<CR>
-nnoremap <silent> <leader>q <cmd>Telescope ghq list<CR>
+local keymap = vim.api.nvim_set_keymap
+keymap('n', '<Leader>t', '<Cmd>Telescope<CR>', { noremap = true })
+keymap('n', '<Leader>tt', '<Cmd>TodoTelescope<CR>', { noremap = true })
+keymap('n', '<Leader>ff', '<Cmd>Telescope find_files<CR>', { noremap = true })
+keymap('n', '<Leader>fr', '<Cmd>Telescope frecency<CR>', { noremap = true })
+keymap('n', '<Leader>x', '<Cmd>Telescope file_browser<CR>', { noremap = true })
+keymap('n', '<Leader>g', '<Cmd>Telescope live_grep<CR>', { noremap = true })
+keymap('n', '<Leader>b', '<Cmd>Telescope buffers<CR>', { noremap = true })
+keymap('n', '<Leader>pr', '<Cmd>Telescope project<CR>', { noremap = true })
+keymap('n', '<Leader>fh', '<Cmd>Telescope help_tags<CR>', { noremap = true })
+keymap('n', '<Leader>c', '<Cmd>Telescope command_palette<CR>', { noremap = true })
+
+keymap('n', '<Leader>z', '<Cmd>Telescope z list<CR>', { noremap = true })
+keymap('n', '<Leader>q', '<Cmd>Telescope ghq list<CR>', { noremap = true })
+

@@ -9,7 +9,10 @@ hook_add = '''
 [[plugins]]
 repo = 'voldikss/vim-translator'
 hook_add = '''
-    source ~/.config/nvim/plugins/translator.vim
+    let g:translator_target_lang = 'ja'
+    let g:vtm_default_engines = ['google']
+    nnoremap <silent> <Leader>w <Plug>TranslateW
+    vnoremap <silent> <Leader>w <Plug>TranslateWV
 '''
 
 [[plugins]]
