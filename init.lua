@@ -1,5 +1,5 @@
 vim.api.nvim_exec( [[
-source ~/.config/nvim/dein_setup.vim
+source ~/.config/nvim/plugins/dein_setup.vim
 ]], false)
 
 require('util')
