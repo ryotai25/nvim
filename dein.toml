@@ -1,11 +1,3 @@
-# [[plugins]]
-# repo = 'neoclide/coc.nvim'
-# merge = 0
-# rev = "release"
-# hook_add = '''
-#     source ~/.config/nvim/plugins/coc.vim
-# '''
-
 [[plugins]]
 repo = 'voldikss/vim-translator'
 hook_add = '''
@@ -147,7 +139,13 @@ require("obsidian").setup({
     folder = "Daily Notes",
   },
   completion = {
-    nvim_cmp = false, -- if using nvim-cmp, otherwise set to false
+    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
   }
 })
+'''
+
+[[plugins]]
+repo = 'brglng/vim-im-select'
+hook_add = '''
+let g:im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman'
 '''

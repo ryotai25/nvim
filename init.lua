@@ -5,4 +5,3 @@ source ~/.config/nvim/dein_setup.vim
 require('util')
 require('mapping')
 require('lsp')
-

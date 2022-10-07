@@ -22,3 +22,5 @@ autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadvie
 ]], false)
 opt.viewoptions: remove('options')
 -- " Don't save options.
+
+vim.g.do_filetype_lua = 1
