@@ -18,9 +18,6 @@ repo = 'LinArcX/telescope-command-palette.nvim'
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-# hook_add = '''
-#     source ~/.config/nvim/plugins/telescope.vim
-# '''
 lua_add = '''
 require('telescope_config')
 '''

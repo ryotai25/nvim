@@ -66,9 +66,6 @@ hook_add = '''
 [[plugins]]
 repo = 'nvim-lua/popup.nvim'
 
-# [[plugins]]
-# repo = 'SirVer/ultisnips'
-
 [[plugins]]
  repo = 'ryotai25/vim-snippets'
 
