@@ -1,10 +1,4 @@
 local on_attach = function(client, bufnr)
-  -- LSPが持つフォーマット機能を無効化する
-  -- →例えばtsserverはデフォルトでフォーマット機能を提供しますが、利用したくない場合はコメントアウトを解除してください
-  --client.server_capabilities.documentFormattingProvider = false
-
-  -- 下記ではデフォルトのキーバインドを設定しています
-  -- ほかのLSPプラグインを使う場合（例：Lspsaga）は必要ないこともあります
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
     vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
     -- vim.keymap.set("n", "<C-m>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
@@ -21,12 +15,11 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
--- この一連の記述で、mason.nvimでインストールしたLanguage Serverが自動的に個別にセットアップされ、利用可能になります
 require("mason-lspconfig").setup_handlers {
-  function (server_name) -- default handler (optional)
+  function (server_name)
     require("lspconfig")[server_name].setup {
-      on_attach = on_attach, --keyバインドなどの設定を登録
-      capabilities = capabilities, --cmpを連携
+      on_attach = on_attach,
+      capabilities = capabilities,
     }
   end,
 }
@@ -35,7 +28,6 @@ require('lspconfig').sumneko_lua.setup {
   settings = {
     Lua = {
       diagnostics = {
-        -- Get the language server to recognize the `vim` global
         globals = {'vim'},
       },
     },
@@ -46,12 +38,9 @@ vim.diagnostic.config({
   virtual_text = false
 })
 
--- Show line diagnostics automatically in hover window
 vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
-
---補完関係の設定
 local cmp = require("cmp")
 cmp.setup({
   sources = {
