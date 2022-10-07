@@ -1,10 +1,10 @@
 [[plugins]]
 repo = 'voldikss/vim-translator'
 hook_add = '''
-    let g:translator_target_lang = 'ja'
-    let g:vtm_default_engines = ['google']
-    nnoremap <silent> <Leader>w <Plug>TranslateW
-    vnoremap <silent> <Leader>w <Plug>TranslateWV
+let g:translator_target_lang = 'ja'
+let g:vtm_default_engines = ['google']
+nnoremap <silent> <Leader>w <Plug>TranslateW
+vnoremap <silent> <Leader>w <Plug>TranslateWV
 '''
 
 [[plugins]]
@@ -20,7 +20,7 @@ repo = 'nvim-treesitter/nvim-treesitter-textobjects'
 [[plugins]]
 repo = 'ryotai25/memolist.vim'
 hook_add = '''
-    source ~/.config/nvim/plugins/memolist.vim
+source ~/.config/nvim/plugins/memolist.vim
 '''
 
 [[plugins]]
@@ -38,8 +38,8 @@ require'nvim-web-devicons'.setup {default = true}
 [[plugins]]
 repo = 'hkupty/iron.nvim'
 hook_add = '''
-    lua require('iron')
-    nnoremap <silent> <leader>r <cmd>IronFocus<CR>
+lua require('iron')
+nnoremap <silent> <leader>r <cmd>IronFocus<CR>
 '''
 
 [[plugins]]
@@ -51,15 +51,12 @@ require('toggleterm')
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
 hook_add = '''
-    source ~/.config/nvim/plugins/lazygit.vim
+source ~/.config/nvim/plugins/lazygit.vim
 '''
 
 # 依存先
 [[plugins]]
 repo = 'nvim-lua/popup.nvim'
-
-[[plugins]]
- repo = 'ryotai25/vim-snippets'
 
 [[plugins]]
  repo = 'folke/todo-comments.nvim'
@@ -76,13 +73,7 @@ require('bufferline_config')
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 lua_add = '''
-    require('lualine').setup{ options = { component_separators = '|' , section_separators = { left = '', right = ''} } }
-'''
-
-[[plugins]]
-repo = 'Pocco81/true-zen.nvim'
-lua_add = '''
-require('true-zen').setup()
+require('lualine').setup{ options = { component_separators = '|' , section_separators = { left = '', right = ''} } }
 '''
 
 [[plugins]]
@@ -91,7 +82,7 @@ repo = 'kkharji/sqlite.lua'
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
 lua_add = '''
-require('nvim-tree').setup{}
+require('nvim-tree').setup()
 '''
 
 [[plugins]]
