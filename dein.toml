@@ -73,8 +73,16 @@ require('bufferline_config')
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 lua_add = '''
-require('lualine').setup{ options = { component_separators = '|' , section_separators = { left = '', right = ''} } }
+require('lualine').setup{ 
+    options = { 
+        component_separators = '|' , 
+        section_separators = { left = '', right = ''} ,
+    },
+}
 '''
+    # sections = {
+    #     lualine_x = { "require('lsp-status').status()", "encoding", "fileformat", "filetype" }
+    # },
 
 [[plugins]]
 repo = 'kkharji/sqlite.lua'

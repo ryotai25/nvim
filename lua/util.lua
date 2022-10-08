@@ -1,4 +1,3 @@
-
 local opt = vim.opt
 local api = vim.api
 
@@ -20,7 +19,11 @@ api.nvim_exec( [[
 autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif " Save fold settings.
 autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
 ]], false)
-opt.viewoptions: remove('options')
--- " Don't save options.
+opt.viewoptions: remove('options') -- " Don't save options.
 
-vim.g.do_filetype_lua = 1
+api.nvim_exec( [[
+au FileType qf call AdjustWindowHeight(2, 5)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
+]], false)
