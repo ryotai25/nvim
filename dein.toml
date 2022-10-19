@@ -96,10 +96,16 @@ require('nvim-tree').setup()
 [[plugins]]
 repo = 'theblob42/drex.nvim'
 
+# [[plugins]]
+# repo = 'glepnir/dashboard-nvim'
+# lua_add = '''
+# require('dashboard_config')
+# '''
+
 [[plugins]]
-repo = 'glepnir/dashboard-nvim'
+repo = 'goolord/alpha-nvim'
 lua_add = '''
-require('dashboard_config')
+require('alpha').setup(require'alpha.themes.startify'.config)
 '''
 
 [[plugins]]
@@ -129,19 +135,19 @@ lua_add = '''
 require('tint').setup()
 '''
 
-[[plugins]]
-repo = 'epwalsh/obsidian.nvim'
-lua_add = '''
-require("obsidian").setup({
-  dir = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
-  daily_notes = {
-    folder = "Daily Notes",
-  },
-  completion = {
-    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-  }
-})
-'''
+# [[plugins]]
+# repo = 'epwalsh/obsidian.nvim'
+# lua_add = '''
+# require("obsidian").setup({
+#   dir = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
+#   daily_notes = {
+#     folder = "Daily Notes",
+#   },
+#   completion = {
+#     nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+#   }
+# })
+# '''
 
 [[plugins]]
 repo = 'brglng/vim-im-select'
