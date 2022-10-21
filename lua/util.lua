@@ -14,12 +14,21 @@ opt.foldlevelstart = 20
 opt.breakindent = true
 opt.breakindentopt = {'shift:0'} --  wrapした行もインデントする
 opt.formatoptions : append('mM')  -- 日本語の行の連結時には空白を入力しない
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 api.nvim_exec( [[
-autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif " Save fold settings.
-autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
+augroup remember_folds
+  autocmd!
+  autocmd BufWrite * mkview
+  autocmd BufRead * silent! loadview
+augroup END
 ]], false)
-opt.viewoptions: remove('options') -- " Don't save options.
+-- opt.viewoptions: remove('options') -- " Don't save options.
+-- autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif " Save fold settings.
+-- autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
+  -- au BufWinLeave ?* mkview 1
+  -- au BufWinEnter ?* silent! loadview 1
 
 api.nvim_exec( [[
 au FileType qf call AdjustWindowHeight(2, 5)

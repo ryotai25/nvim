@@ -26,6 +26,22 @@ repo = 'hrsh7th/cmp-nvim-lua'
 repo = 'hrsh7th/cmp-buffer'
 
 [[plugins]]
+repo = 'hrsh7th/cmp-cmdline'
+lua_add = '''
+require'cmp'.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' }
+  }
+})
+require'cmp'.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+'''
+
+
+[[plugins]]
 repo = 'hrsh7th/cmp-path'
 lua_add = '''
 local cmp = require("cmp")
