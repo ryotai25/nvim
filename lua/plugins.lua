@@ -1,8 +1,8 @@
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
 ]])
 
 vim.cmd [[packadd packer.nvim]]
@@ -113,6 +113,12 @@ require'packer'.startup(function(use)
           color_icons = true,
         }
       }
+      vim.api.nvim_set_keymap('n', 'gt', '<Cmd>BufferLineCycleNext<CR>', {})
+      vim.api.nvim_set_keymap('n', 'gT', '<Cmd>BufferLineCyclePrev<CR>', {})
+      vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
+      vim.api.nvim_set_keymap('n', '<C-k>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
+      vim.api.nvim_set_keymap('n', '<S-Right>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
+      vim.api.nvim_set_keymap('n', '<S-Left>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
     end
   }
 
@@ -142,7 +148,6 @@ require'packer'.startup(function(use)
     event = { "VimEnter" }
   }
 
-  -- TODO: 変更
   use {
     'hkupty/iron.nvim',
     config = function()
@@ -173,62 +178,63 @@ require'packer'.startup(function(use)
       }
     }
     vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>IronFocus<CR>', {noremap = true})
-    end
-  }
+  end
+}
 
-  use {
-    'voldikss/vim-translator',
-    config = function()
-      vim.g.translator_target_lang = 'ja'
-      vim.api.nvim_set_keymap('n', '<Leader>w', '<Plug>TranslateW', { noremap = true})
-    end
-  }
+use {
+  'voldikss/vim-translator',
+  config = function()
+    vim.g.translator_target_lang = 'ja'
+    vim.api.nvim_set_keymap('n', '<Leader>w', '<Plug>TranslateW', { noremap = true})
+    vim.api.nvim_set_keymap('v', '<Leader>w', '<Plug>TranslateWV', { noremap = true})
+  end
+}
 
-  use {
-    'kevinhwang91/nvim-bqf',
-   opt = true,
-   ft = 'qf',
-  }
-  use {
-    'lervag/vimtex',
-    config = function()
-      vim.g.vimtex_compiler_latexmk = {
-        build_dir = 'build',
-        continuous = '1',
-      }
-      vim.g.vimtex_view_method = 'skim'
-      vim.g.vimtex_fold_enabled = 1
-      vim.g.vimtex_quickfix_open_on_warinigs = 0
-      vim.g.vimtex_syntax_enabled = 0
-    end
-  }
- use {
-   'JuliaEditorSupport/julia-vim',
-   config = function()
-     vim.g.latex_to_unicode_file_types = {'julia', 'tex', 'latex'}
-   end
- }
+use {
+  'kevinhwang91/nvim-bqf',
+  opt = true,
+  ft = 'qf',
+}
 
- use {
-   'hasundue/vim-pluto',
-   requires = {
-     'vim-denops/denops.vim'
-   },
-   ft = 'julia',
-   opt = true,
- }
+use {
+  'lervag/vimtex',
+  config = function()
+    vim.g.vimtex_compiler_latexmk = {
+      build_dir = 'build',
+      continuous = '1',
+    }
+    vim.g.vimtex_view_method = 'skim'
+    vim.g.vimtex_fold_enabled = 1
+    vim.g.vimtex_quickfix_open_on_warinigs = 0
+    vim.g.vimtex_syntax_enabled = 0
+  end
+}
 
- use {
-   'ryotai25/memolist.vim',
-   config = function()
-     vim.g.memolist_path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"
-     vim.g.memolist_memo_suffix = "md"
-     vim.g.momolist_denite = 1
-     vim.api.nvim_set_keymap('n', '<Leader>mn',  ':MemoNew<CR>', {noremap = true})
-     vim.api.nvim_set_keymap('n', '<Leader>ml',  ':MemoList<CR>', {noremap = true})
-     vim.api.nvim_set_keymap('n', '<Leader>mg',  ':MemoGrep<CR>', {noremap = true})
-     -- " nnoremap <Leader>ml  :MemoList<CR>
-     -- nnoremap <Leader>mg  :MemoGrep<CR>
-   end
- }
+use {
+  'JuliaEditorSupport/julia-vim',
+  config = function()
+    vim.g.latex_to_unicode_file_types = {'julia', 'tex', 'latex'}
+  end
+}
+
+use {
+  'hasundue/vim-pluto',
+  requires = {
+    'vim-denops/denops.vim'
+  },
+  ft = 'julia',
+  opt = true,
+}
+
+use {
+  'ryotai25/memolist.vim',
+  config = function()
+    vim.g.memolist_path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"
+    vim.g.memolist_memo_suffix = "md"
+    vim.g.momolist_denite = 1
+    vim.api.nvim_set_keymap('n', '<Leader>mn',  ':MemoNew<CR>', {noremap = true})
+    vim.api.nvim_set_keymap('n', '<Leader>ml',  ':MemoList<CR>', {noremap = true})
+    vim.api.nvim_set_keymap('n', '<Leader>mg',  ':MemoGrep<CR>', {noremap = true})
+  end
+}
 end)

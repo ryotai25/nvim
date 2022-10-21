@@ -13,10 +13,11 @@ keymap('n', '<Right>', '<C-w>l', { noremap = true })
 -- keymap('n', '<C-k>', 'gT', { noremap = true })
 -- keymap('n', '<S-Right>', 'gt', { noremap = true })
 -- keymap('n', '<S-Left>', 'gT', { noremap = true })
-keymap('n', '<C-j>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
-keymap('n', '<C-k>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
-keymap('n', '<S-Right>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
-keymap('n', '<S-Left>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
+
+-- keymap('n', '<C-j>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
+-- keymap('n', '<C-k>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
+-- keymap('n', '<S-Right>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
+-- keymap('n', '<S-Left>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
 
 -- opt + ↓ ↑ ← →
 keymap('n', '∆', '<C-w>j', { noremap = true })
