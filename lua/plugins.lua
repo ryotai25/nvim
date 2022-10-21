@@ -7,7 +7,7 @@ augroup end
 
 vim.cmd [[packadd packer.nvim]]
 
-function get_setup(name)
+local function get_setup(name)
   return string.format('require("setup/%s")', name)
 end
 
@@ -71,6 +71,7 @@ require'packer'.startup(function(use)
           colors.border = colors.dark3
         end
       }
+    vim.cmd[[colorscheme tokyonight]]
     end
   }
 
@@ -128,7 +129,6 @@ require'packer'.startup(function(use)
       vim.api.nvim_set_keymap('v', '<Leader>w', '<Plug>TranslateWV', { noremap = true})
     end
   }
-
 
   use {
     'JuliaEditorSupport/julia-vim',
