@@ -72,6 +72,7 @@ lua_add = '''
 require('bufferline_config')
 '''
 
+# 未完了
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 lua_add = '''
@@ -86,6 +87,7 @@ require('lualine').setup{
 [[plugins]]
 repo = 'kkharji/sqlite.lua'
 
+# 未完了
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
 lua_add = '''
@@ -142,6 +144,7 @@ require('tint').setup()
 # })
 # '''
 
+# 未完了
 [[plugins]]
 repo = 'brglng/vim-im-select'
 hook_add = '''
