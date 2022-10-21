@@ -87,7 +87,7 @@ _G.packer_plugins = {
     url = "https://github.com/goolord/alpha-nvim"
   },
   ["bufferline.nvim"] = {
-    config = { "\27LJ\2\n”\4\0\0\6\0\22\00096\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0'\4\v\0004\5\0\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\f\0'\4\r\0004\5\0\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\14\0'\4\v\0005\5\15\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\16\0'\4\r\0005\5\17\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\18\0'\4\v\0005\5\19\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\20\0'\4\r\0005\5\21\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\r<S-Left>\1\0\1\fnoremap\2\14<S-Right>\1\0\1\fnoremap\2\n<C-k>\1\0\1\fnoremap\2\n<C-j>!<Cmd>BufferLineCyclePrev<CR>\agT!<Cmd>BufferLineCycleNext<CR>\agt\6n\20nvim_set_keymap\bapi\bvim\foptions\1\0\0\1\0\5\tmode\ttabs\16color_icons\2\20show_close_icon\1\28show_buffer_close_icons\1\27always_show_bufferline\1\nsetup\15bufferline\frequire\0" },
+    config = { 'require("setup/bufferline")' },
     loaded = true,
     path = "/Users/Ryotai/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
@@ -153,7 +153,7 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["iron.nvim"] = {
-    config = { "\27LJ\2\nŒ\4\0\0\a\0\23\0\0276\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0005\3\3\0005\4\a\0005\5\5\0005\6\4\0=\6\6\5=\5\b\4=\4\t\3=\3\v\0025\3\f\0=\3\r\0025\3\14\0=\3\15\2B\0\2\0016\0\16\0009\0\17\0009\0\18\0'\2\19\0'\3\20\0'\4\21\0005\5\22\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\23<cmd>IronFocus<CR>\14<leader>r\6n\20nvim_set_keymap\bapi\bvim\14highlight\1\0\1\vitalic\2\fkeymaps\1\0\b\16visual_send\15<Leader>sc\14interrupt\21<Leader>s<space>\16send_motion\15<Leader>sc\acr\18<Leader>s<cr>\texit\15<Leader>sq\14send_line\15<Leader>ss\nclear\15<Leader>cl\14send_file\15<Leader>sf\vconfig\1\0\0\20repl_definition\ash\1\0\0\fcommand\1\0\0\1\2\0\0\tfish\1\0\3\17scratch_repl\2\20should_map_plug\1\18repl_open_cmd\25belowright 72 vsplit\nsetup\14iron.core\frequire\0" },
+    config = { 'require("setup/iron")' },
     loaded = true,
     path = "/Users/Ryotai/.local/share/nvim/site/pack/packer/start/iron.nvim",
     url = "https://github.com/hkupty/iron.nvim"
@@ -165,7 +165,7 @@ _G.packer_plugins = {
     url = "https://github.com/JuliaEditorSupport/julia-vim"
   },
   ["lazygit.nvim"] = {
-    config = { "\27LJ\2\nˆ\3\0\0\6\0\14\1\0296\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\a\0)\1\0\0=\1\b\0006\0\0\0009\0\a\0*\1\0\0=\1\t\0006\0\0\0009\0\a\0005\1\v\0=\1\n\0006\0\0\0009\0\a\0)\1\0\0=\1\f\0006\0\0\0009\0\a\0)\1\1\0=\1\r\0K\0\1\0\30lazygit_use_neovim_remote(lazygit_floating_window_use_plenary\1\5\0\0\bâ•­\bâ•®\bâ•°\bâ•¯)lazygit_floating_window_corner_chars+lazygit_floating_window_scaling_factor%lazygit_floating_window_winblend\6g\1\0\1\fnoremap\2\21<cmd>LazyGit<CR>\15<leader>lg\6n\20nvim_set_keymap\bapi\bvim›³æÌ\25Ì™³ÿ\3\0" },
+    config = { 'require("setup/lazygit")' },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
@@ -183,7 +183,7 @@ _G.packer_plugins = {
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\n‘\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\tleft\5\nright\5\1\0\1\25component_separators\6|\nsetup\flualine\frequire\0" },
+    config = { "\27LJ\2\n‘\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\nright\5\tleft\5\1\0\1\25component_separators\6|\nsetup\flualine\frequire\0" },
     loaded = true,
     path = "/Users/Ryotai/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
@@ -199,7 +199,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["memolist.vim"] = {
-    config = { "\27LJ\2\n™\3\0\0\6\0\19\0%6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0'\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\r\0'\4\14\0005\5\15\0B\0\5\0016\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\16\0'\4\17\0005\5\18\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\18:MemoGrep<CR>\15<Leader>mg\1\0\1\fnoremap\2\18:MemoList<CR>\15<Leader>ml\1\0\1\fnoremap\2\17:MemoNew<CR>\15<Leader>mn\6n\20nvim_set_keymap\bapi\20momolist_denite\amd\25memolist_memo_suffixB~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes\18memolist_path\6g\bvim\0" },
+    config = { 'require("setup/memolist")' },
     loaded = true,
     path = "/Users/Ryotai/.local/share/nvim/site/pack/packer/start/memolist.vim",
     url = "https://github.com/ryotai25/memolist.vim"
@@ -383,38 +383,24 @@ _G.packer_plugins = {
     url = "https://github.com/voldikss/vim-translator"
   },
   vimtex = {
-    config = { "\27LJ\2\nü\1\0\0\2\0\t\0\0216\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\1\0)\1\0\0=\1\a\0006\0\0\0009\0\1\0)\1\0\0=\1\b\0K\0\1\0\26vimtex_syntax_enabled%vimtex_quickfix_open_on_warinigs\24vimtex_fold_enabled\tskim\23vimtex_view_method\1\0\2\14build_dir\nbuild\15continuous\0061\28vimtex_compiler_latexmk\6g\bvim\0" },
-    loaded = true,
-    path = "/Users/Ryotai/.local/share/nvim/site/pack/packer/start/vimtex",
+    config = { 'require("setup/vimtex")' },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex",
     url = "https://github.com/lervag/vimtex"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: iron.nvim
-time([[Config for iron.nvim]], true)
-try_loadstring("\27LJ\2\nŒ\4\0\0\a\0\23\0\0276\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0005\3\3\0005\4\a\0005\5\5\0005\6\4\0=\6\6\5=\5\b\4=\4\t\3=\3\v\0025\3\f\0=\3\r\0025\3\14\0=\3\15\2B\0\2\0016\0\16\0009\0\17\0009\0\18\0'\2\19\0'\3\20\0'\4\21\0005\5\22\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\23<cmd>IronFocus<CR>\14<leader>r\6n\20nvim_set_keymap\bapi\bvim\14highlight\1\0\1\vitalic\2\fkeymaps\1\0\b\16visual_send\15<Leader>sc\14interrupt\21<Leader>s<space>\16send_motion\15<Leader>sc\acr\18<Leader>s<cr>\texit\15<Leader>sq\14send_line\15<Leader>ss\nclear\15<Leader>cl\14send_file\15<Leader>sf\vconfig\1\0\0\20repl_definition\ash\1\0\0\fcommand\1\0\0\1\2\0\0\tfish\1\0\3\17scratch_repl\2\20should_map_plug\1\18repl_open_cmd\25belowright 72 vsplit\nsetup\14iron.core\frequire\0", "config", "iron.nvim")
-time([[Config for iron.nvim]], false)
--- Config for: tint.nvim
-time([[Config for tint.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ttint\frequire\0", "config", "tint.nvim")
-time([[Config for tint.nvim]], false)
--- Config for: julia-vim
-time([[Config for julia-vim]], true)
-try_loadstring("\27LJ\2\nQ\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\4\0\0\njulia\btex\nlatex latex_to_unicode_file_types\6g\bvim\0", "config", "julia-vim")
-time([[Config for julia-vim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require("setup/cmp")
+time([[Config for nvim-cmp]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\nP\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\20start_in_insert\1\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\fdefault\2\nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-web-devicons")
-time([[Config for nvim-web-devicons]], false)
 -- Config for: tokyonight.nvim
 time([[Config for tokyonight.nvim]], true)
 try_loadstring("\27LJ\2\n \0\1\2\0\2\0\0039\1\1\0=\1\0\0K\0\1\0\ndark3\vborder^\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\2B\0\2\1K\0\1\0\14on_colors\0\1\0\1\nstyle\nstorm\nsetup\15tokyonight\frequire\0", "config", "tokyonight.nvim")
@@ -423,65 +409,90 @@ time([[Config for tokyonight.nvim]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n‘\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\nright\5\tleft\5\1\0\1\25component_separators\6|\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
--- Config for: vimtex
-time([[Config for vimtex]], true)
-try_loadstring("\27LJ\2\nü\1\0\0\2\0\t\0\0216\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\1\0)\1\0\0=\1\a\0006\0\0\0009\0\1\0)\1\0\0=\1\b\0K\0\1\0\26vimtex_syntax_enabled%vimtex_quickfix_open_on_warinigs\24vimtex_fold_enabled\tskim\23vimtex_view_method\1\0\2\14build_dir\nbuild\15continuous\0061\28vimtex_compiler_latexmk\6g\bvim\0", "config", "vimtex")
-time([[Config for vimtex]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("setup/cmp")
-time([[Config for nvim-cmp]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
-try_loadstring("\27LJ\2\n”\4\0\0\6\0\22\00096\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0'\4\v\0004\5\0\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\f\0'\4\r\0004\5\0\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\14\0'\4\v\0005\5\15\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\16\0'\4\r\0005\5\17\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\18\0'\4\v\0005\5\19\0B\0\5\0016\0\6\0009\0\a\0009\0\b\0'\2\t\0'\3\20\0'\4\r\0005\5\21\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\r<S-Left>\1\0\1\fnoremap\2\14<S-Right>\1\0\1\fnoremap\2\n<C-k>\1\0\1\fnoremap\2\n<C-j>!<Cmd>BufferLineCyclePrev<CR>\agT!<Cmd>BufferLineCycleNext<CR>\agt\6n\20nvim_set_keymap\bapi\bvim\foptions\1\0\0\1\0\5\tmode\ttabs\16color_icons\2\20show_close_icon\1\28show_buffer_close_icons\1\27always_show_bufferline\1\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
+require("setup/bufferline")
 time([[Config for bufferline.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\nÆ\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\14highlight\1\0\1\venable\2\21ensure_installed\1\0\0\1\r\0\0\njulia\blua\bvim\nlatex\rmarkdown\tjson\tfish\vpython\6r\ttoml\tbash\nregex\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n‘\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\tleft\5\nright\5\1\0\1\25component_separators\6|\nsetup\flualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
--- Config for: vim-im-select
-time([[Config for vim-im-select]], true)
-try_loadstring("\27LJ\2\nd\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0005com.apple.inputmethod.Kotoeri.RomajiTyping.Roman\22im_select_default\6g\bvim\0", "config", "vim-im-select")
-time([[Config for vim-im-select]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\fdefault\2\nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-web-devicons")
+time([[Config for nvim-web-devicons]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: memolist.vim
-time([[Config for memolist.vim]], true)
-try_loadstring("\27LJ\2\n™\3\0\0\6\0\19\0%6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\n\0'\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\r\0'\4\14\0005\5\15\0B\0\5\0016\0\0\0009\0\a\0009\0\b\0'\2\t\0'\3\16\0'\4\17\0005\5\18\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\18:MemoGrep<CR>\15<Leader>mg\1\0\1\fnoremap\2\18:MemoList<CR>\15<Leader>ml\1\0\1\fnoremap\2\17:MemoNew<CR>\15<Leader>mn\6n\20nvim_set_keymap\bapi\20momolist_denite\amd\25memolist_memo_suffixB~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes\18memolist_path\6g\bvim\0", "config", "memolist.vim")
-time([[Config for memolist.vim]], false)
 -- Config for: vim-translator
 time([[Config for vim-translator]], true)
 try_loadstring("\27LJ\2\nØ\1\0\0\6\0\r\0\0216\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\4\0009\0\5\0'\2\6\0'\3\a\0'\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\2\n\0'\3\a\0'\4\v\0005\5\f\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\22<Plug>TranslateWV\6v\1\0\1\fnoremap\2\21<Plug>TranslateW\14<Leader>w\6n\20nvim_set_keymap\bapi\aja\27translator_target_lang\6g\bvim\0", "config", "vim-translator")
 time([[Config for vim-translator]], false)
+-- Config for: iron.nvim
+time([[Config for iron.nvim]], true)
+require("setup/iron")
+time([[Config for iron.nvim]], false)
+-- Config for: julia-vim
+time([[Config for julia-vim]], true)
+try_loadstring("\27LJ\2\nQ\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\4\0\0\njulia\btex\nlatex latex_to_unicode_file_types\6g\bvim\0", "config", "julia-vim")
+time([[Config for julia-vim]], false)
+-- Config for: tint.nvim
+time([[Config for tint.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ttint\frequire\0", "config", "tint.nvim")
+time([[Config for tint.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
+-- Config for: memolist.vim
+time([[Config for memolist.vim]], true)
+require("setup/memolist")
+time([[Config for memolist.vim]], false)
+-- Config for: vim-im-select
+time([[Config for vim-im-select]], true)
+try_loadstring("\27LJ\2\nd\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0005com.apple.inputmethod.Kotoeri.RomajiTyping.Roman\22im_select_default\6g\bvim\0", "config", "vim-im-select")
+time([[Config for vim-im-select]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType julia ++once lua require("packer.load")({'vim-pluto'}, { ft = "julia" }, _G.packer_plugins)]]
 vim.cmd [[au FileType qf ++once lua require("packer.load")({'nvim-bqf'}, { ft = "qf" }, _G.packer_plugins)]]
+vim.cmd [[au FileType latex ++once lua require("packer.load")({'vimtex'}, { ft = "latex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "tex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType julia ++once lua require("packer.load")({'vim-pluto'}, { ft = "julia" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'telescope.nvim', 'noice.nvim', 'lazygit.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'noice.nvim', 'telescope.nvim', 'lazygit.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
+vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]], true)
+vim.cmd [[source /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]]
+time([[Sourcing ftdetect script at: /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]], false)
+time([[Sourcing ftdetect script at: /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]], true)
+vim.cmd [[source /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]]
+time([[Sourcing ftdetect script at: /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]], false)
+time([[Sourcing ftdetect script at: /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]], true)
+vim.cmd [[source /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]]
+time([[Sourcing ftdetect script at: /Users/Ryotai/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false

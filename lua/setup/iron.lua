@@ -1,6 +1,4 @@
-local iron = require("iron.core")
-
-iron.setup {
+require("iron.core").setup {
   config = {
     should_map_plug = false, -- If iron should expose `<plug>(...)` mappings for the plugins
     scratch_repl = true, -- Whether a repl should be discarded or not
@@ -26,3 +24,4 @@ iron.setup {
     italic = true
   }
 }
+vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>IronFocus<CR>', {noremap = true})
