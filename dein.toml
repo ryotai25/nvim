@@ -45,7 +45,9 @@ nnoremap <silent> <leader>r <cmd>IronFocus<CR>
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
 lua_add = '''
-require('toggleterm').setup()
+require('toggleterm').setup{
+    start_in_insert = false
+}
 '''
 
 [[plugins]]
@@ -80,9 +82,6 @@ require('lualine').setup{
     },
 }
 '''
-    # sections = {
-    #     lualine_x = { "require('lsp-status').status()", "encoding", "fileformat", "filetype" }
-    # },
 
 [[plugins]]
 repo = 'kkharji/sqlite.lua'
@@ -95,12 +94,6 @@ require('nvim-tree').setup()
 
 [[plugins]]
 repo = 'theblob42/drex.nvim'
-
-# [[plugins]]
-# repo = 'glepnir/dashboard-nvim'
-# lua_add = '''
-# require('dashboard_config')
-# '''
 
 [[plugins]]
 repo = 'goolord/alpha-nvim'
@@ -157,9 +150,6 @@ let g:im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman'
 
 [[plugins]]
 repo = 'MunifTanjim/nui.nvim'
-# lua_add = '''
-# require('noice').setup()
-# '''
 
 [[plugins]]
 repo = 'rcarriga/nvim-notify'
@@ -169,12 +159,3 @@ repo = 'folke/noice.nvim'
 lua_add = '''
 require('noice').setup()
 '''
-
-# [[plugins]]
-# repo = 'rmagatti/auto-session'
-# lua_add = '''
-# require("auto-session").setup {
-#       log_level = "error",
-#       auto_session_suppress_dirs = { "~/", "~/ghq/github.com/ryotai25/"},
-#     }
-# '''

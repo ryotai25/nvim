@@ -9,3 +9,6 @@ require("bufferline").setup{
     color_icons = true,
   }
 }
+
+vim.keymap.set('n', 'gt', '<Cmd>BufferLineCycleNext<CR>', {})
+vim.keymap.set('n', 'gT', '<Cmd>BufferLineCyclePrev<CR>', {})

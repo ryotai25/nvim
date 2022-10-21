@@ -9,10 +9,14 @@ keymap('n', '<Down>', '<C-w>j', { noremap = true })
 keymap('n', '<Left>', '<C-w>h', { noremap = true })
 keymap('n', '<Right>', '<C-w>l', { noremap = true })
 
-keymap('n', '<C-j>', 'gt', { noremap = true })
-keymap('n', '<C-k>', 'gT', { noremap = true })
-keymap('n', '<S-Right>', 'gt', { noremap = true })
-keymap('n', '<S-Left>', 'gT', { noremap = true })
+-- keymap('n', '<C-j>', 'gt', { noremap = true })
+-- keymap('n', '<C-k>', 'gT', { noremap = true })
+-- keymap('n', '<S-Right>', 'gt', { noremap = true })
+-- keymap('n', '<S-Left>', 'gT', { noremap = true })
+keymap('n', '<C-j>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
+keymap('n', '<C-k>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
+keymap('n', '<S-Right>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
+keymap('n', '<S-Left>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
 
 -- opt + ↓ ↑ ← →
 keymap('n', '∆', '<C-w>j', { noremap = true })
@@ -25,5 +29,11 @@ keymap('t', '˙', '<C-w>h', { noremap = true })
 keymap('t', '¬', '<C-w>l', { noremap = true })
 
 keymap('n', '<C-w><C-t>', '<C-w>T', { noremap = true })
+
+keymap('n', '<C-w><C-.>', '<C-w>>', { noremap = true })
+keymap('n', '<C-w><C-,>', '<C-w><', { noremap = true })
+
+keymap('c', '<C-p>', '<Up>', { noremap = true })
+keymap('c', '<C-n>', '<Down>', { noremap = true })
 
 keymap('c', '3b3b', '<C-u>undo<CR>', { noremap = true }) -- 起動時にキーが入力されてしまう本体の不具合？を回避
