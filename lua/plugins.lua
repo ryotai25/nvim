@@ -88,7 +88,6 @@ require'packer'.startup(function(use)
   use 'theblob42/drex.nvim'
   use 'unblevable/quick-scope'
   use 'mattn/vim-findroot'
-  use 'kevinhwang91/nvim-bqf'
 
   use {
     "folke/noice.nvim",
@@ -145,7 +144,36 @@ require'packer'.startup(function(use)
 
   -- TODO: 変更
   use {
-    'hkupty/iron.nvim'
+    'hkupty/iron.nvim',
+    config = function()
+      require("iron.core").setup {
+        config = {
+          should_map_plug = false, -- If iron should expose `<plug>(...)` mappings for the plugins
+          scratch_repl = true, -- Whether a repl should be discarded or not
+          repl_definition = { -- Your repl definitions come here
+          sh = {
+            command = {"fish"}
+          }
+        },
+        -- repl_open_cmd = require('iron.view').curry.bottom(40),
+        repl_open_cmd = 'belowright 72 vsplit',
+      },
+      keymaps = {
+        send_motion = "<Leader>sc",
+        visual_send = "<Leader>sc",
+        send_file = "<Leader>sf",
+        send_line = "<Leader>ss",
+        cr = "<Leader>s<cr>",
+        interrupt = "<Leader>s<space>",
+        exit = "<Leader>sq",
+        clear = "<Leader>cl",
+      },
+      highlight = {
+        italic = true
+      }
+    }
+    vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>IronFocus<CR>', {noremap = true})
+    end
   }
 
   use {
@@ -157,8 +185,23 @@ require'packer'.startup(function(use)
   }
 
   use {
- 'lervag/vimtex',
- }
+    'kevinhwang91/nvim-bqf',
+   opt = true,
+   ft = 'qf',
+  }
+  use {
+    'lervag/vimtex',
+    config = function()
+      vim.g.vimtex_compiler_latexmk = {
+        build_dir = 'build',
+        continuous = '1',
+      }
+      vim.g.vimtex_view_method = 'skim'
+      vim.g.vimtex_fold_enabled = 1
+      vim.g.vimtex_quickfix_open_on_warinigs = 0
+      vim.g.vimtex_syntax_enabled = 0
+    end
+  }
  use {
    'JuliaEditorSupport/julia-vim',
    config = function()
@@ -173,5 +216,19 @@ require'packer'.startup(function(use)
    },
    ft = 'julia',
    opt = true,
+ }
+
+ use {
+   'ryotai25/memolist.vim',
+   config = function()
+     vim.g.memolist_path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"
+     vim.g.memolist_memo_suffix = "md"
+     vim.g.momolist_denite = 1
+     vim.api.nvim_set_keymap('n', '<Leader>mn',  ':MemoNew<CR>', {noremap = true})
+     vim.api.nvim_set_keymap('n', '<Leader>ml',  ':MemoList<CR>', {noremap = true})
+     vim.api.nvim_set_keymap('n', '<Leader>mg',  ':MemoGrep<CR>', {noremap = true})
+     -- " nnoremap <Leader>ml  :MemoList<CR>
+     -- nnoremap <Leader>mg  :MemoGrep<CR>
+   end
  }
 end)
