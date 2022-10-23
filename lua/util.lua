@@ -14,8 +14,6 @@ opt.foldlevelstart = 20
 opt.breakindent = true
 opt.breakindentopt = {'shift:0'} --  wrapした行もインデントする
 opt.formatoptions : append('mM')  -- 日本語の行の連結時には空白を入力しない
--- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 api.nvim_exec( [[
 augroup remember_folds

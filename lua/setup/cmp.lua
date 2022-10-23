@@ -40,7 +40,7 @@ require("mason-lspconfig").setup{
         "sumneko_lua", -- lua
         "pyright",
         "r_language_server",
-        -- "vimls", -- vim
+        "vimls", -- vim
     }
 }
 
