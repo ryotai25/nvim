@@ -15,6 +15,7 @@ opt.breakindent = true
 opt.breakindentopt = {'shift:0'} --  wrapした行もインデントする
 opt.formatoptions : append('mM')  -- 日本語の行の連結時には空白を入力しない
 
+-- TODO:うまく動かない時もある．原因追求
 api.nvim_exec( [[
 augroup remember_folds
   autocmd!
@@ -22,11 +23,12 @@ augroup remember_folds
   autocmd BufRead * silent! loadview
 augroup END
 ]], false)
--- opt.viewoptions: remove('options') -- " Don't save options.
--- autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif " Save fold settings.
+
+-- api.nvim_exec( [[
+-- opt.viewoptions: remove('options')
+-- autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
 -- autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
-  -- au BufWinLeave ?* mkview 1
-  -- au BufWinEnter ?* silent! loadview 1
+-- ]], false)
 
 api.nvim_exec( [[
 au FileType qf call AdjustWindowHeight(2, 5)
