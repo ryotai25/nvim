@@ -24,11 +24,6 @@ augroup remember_folds
 augroup END
 ]], false)
 
--- api.nvim_exec( [[
--- opt.viewoptions: remove('options')
--- autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
--- autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
--- ]], false)
 
 api.nvim_exec( [[
 au FileType qf call AdjustWindowHeight(2, 5)
