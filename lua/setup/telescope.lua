@@ -51,10 +51,6 @@ require('telescope').setup{
                 { "relative number", ':set relativenumber!' },
                 { "search highlighting (F12)", ':set hlsearch!' },
             },
-            {"Dein",
-                { "update plugins", ":call dein#update()" },
-                { "recache plugins", ":call dein#recache_runtimepath()"},
-            }
         }
     }
 }

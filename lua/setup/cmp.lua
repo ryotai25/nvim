@@ -67,7 +67,7 @@ cmp.setup({
     { name = "buffer" },
     { name = "path" },
     { name = 'nvim_lua'},
-    { name = 'cmdline'},
+    -- { name = 'cmdline'},
     { name = "ultisnips" },
   },
 
@@ -115,5 +115,4 @@ cmp.setup.cmdline('/', {
 
 vim.g.UltiSnipsExpandTrigger = '<C-j>'
 vim.g.UltiSnipsJumpForwardTrigger = '<C-j>'
-
 vim.g.UltiSnipsJumpBackwardTrigger = '<C-k>'
