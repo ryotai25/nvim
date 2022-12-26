@@ -44,16 +44,17 @@ require'packer'.startup(function(use)
     requires = {
       { "williamboman/mason.nvim", },
       { "williamboman/mason-lspconfig.nvim", },
-      { "neovim/nvim-lspconfig" },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lua' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-cmdline', commit = 'd2dfa338520c99c1f2dc6af9388de081a6e63296' }, -- FIXME: \ 入力するとなんかエラー出る たまに更新を確認する
-      { 'hrsh7th/cmp-path' },
-      { 'onsails/lspkind.nvim' },
-      { 'quangnguyen30192/cmp-nvim-ultisnips' },
-      { 'sirver/ultisnips' },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+      { "neovim/nvim-lspconfig", commit = '3e2cc7061957292850cc386d9146f55458ae9fe3' },
+      { 'hrsh7th/cmp-nvim-lsp',  },
+      { 'hrsh7th/cmp-nvim-lua',  },
+      { 'hrsh7th/cmp-buffer',  },
+      -- { 'hrsh7th/cmp-cmdline', commit = 'd2dfa338520c99c1f2dc6af9388de081a6e63296',  }, -- FIXME: \ 入力するとなんかエラー出る たまに更新を確認する
+      { 'hrsh7th/cmp-cmdline', },
+      { 'hrsh7th/cmp-path',  },
+      { 'onsails/lspkind.nvim',  },
+      { 'quangnguyen30192/cmp-nvim-ultisnips', },
+      { 'sirver/ultisnips',  },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help', },
       { 'glepnir/lspsaga.nvim' },
       { 'j-hui/fidget.nvim'}
     },
