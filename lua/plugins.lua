@@ -1,68 +1,75 @@
-vim.cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-augroup end
-]])
-
-vim.cmd [[packadd packer.nvim]]
-
-local function get_setup(name)
-  return string.format('require("setup/%s")', name)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--single-branch",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
+  })
 end
+vim.opt.runtimepath:prepend(lazypath)
 
-require'packer'.startup(function(use)
-  use{'wbthomason/packer.nvim', opt = true}
+-- local function get_setup(name)
+--   return string.format('require("setup.%s")', name)
+-- end
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    requires = {
-      { 'nvim-treesitter/nvim-treesitter-textobjects' },
+require("lazy").setup({
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects" ,
     },
-    run = ':TSUpdate',
-    config = get_setup("nvim-treesitter"),
-  }
+    build = ":TSUpdate",
+    config = function()
+      require("setup.nvim-treesitter")
+    end
+  },
 
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = {
-      {'nvim-lua/plenary.nvim'},
-      {"kkharji/sqlite.lua"},
-      { 'nvim-telescope/telescope-frecency.nvim' },
-      { 'nvim-telescope/telescope-z.nvim' },
-      { 'nvim-telescope/telescope-ghq.nvim' },
-      { 'nvim-telescope/telescope-file-browser.nvim' },
-      { 'nvim-telescope/telescope-project.nvim' },
-      { 'LinArcX/telescope-command-palette.nvim' },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "kkharji/sqlite.lua",
+      "nvim-telescope/telescope-frecency.nvim" ,
+      "nvim-telescope/telescope-z.nvim" ,
+      "nvim-telescope/telescope-ghq.nvim" ,
+      "nvim-telescope/telescope-file-browser.nvim" ,
+      "nvim-telescope/telescope-project.nvim" ,
+      "LinArcX/telescope-command-palette.nvim" ,
     },
-    config = get_setup("telescope"),
-    event = { "VimEnter" }
-  }
+    config = function()
+      require("setup.telescope")
+    end,
+    event = "VimEnter",
+  },
 
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      { "williamboman/mason.nvim", },
-      { "williamboman/mason-lspconfig.nvim", },
-      { "neovim/nvim-lspconfig", commit = '3e2cc7061957292850cc386d9146f55458ae9fe3' },
-      { 'hrsh7th/cmp-nvim-lsp',  },
-      { 'hrsh7th/cmp-nvim-lua',  },
-      { 'hrsh7th/cmp-buffer',  },
-      -- { 'hrsh7th/cmp-cmdline', commit = 'd2dfa338520c99c1f2dc6af9388de081a6e63296',  }, -- FIXME: \ 入力するとなんかエラー出る たまに更新を確認する
-      { 'hrsh7th/cmp-cmdline', },
-      { 'hrsh7th/cmp-path',  },
-      { 'onsails/lspkind.nvim',  },
-      { 'quangnguyen30192/cmp-nvim-ultisnips', },
-      { 'sirver/ultisnips',  },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help', },
-      { 'glepnir/lspsaga.nvim' },
-      { 'j-hui/fidget.nvim'}
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      {"neovim/nvim-lspconfig", commit = "3e2cc7061957292850cc386d9146f55458ae9fe3"},
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-path",
+      "onsails/lspkind.nvim",
+      "quangnguyen30192/cmp-nvim-ultisnips",
+      "sirver/ultisnips",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      "glepnir/lspsaga.nvim",
+      "j-hui/fidget.nvim"
     },
-    config = get_setup("cmp"),
-  }
+    config = function()
+      require("setup.cmp")
+    end
+  },
 
-  use {
-    'folke/tokyonight.nvim',
+  {
+    "folke/tokyonight.nvim",
     config = function()
       require("tokyonight").setup{
         style = "storm",
@@ -70,79 +77,103 @@ require'packer'.startup(function(use)
           colors.border = colors.dark3
         end
       }
-    vim.cmd[[colorscheme tokyonight]]
+      vim.cmd[[colorscheme tokyonight]]
     end
-  }
+  },
 
-  use { 'kyazdani42/nvim-web-devicons', config = function() require'nvim-web-devicons'.setup{default = true} end }
-  use { 'folke/todo-comments.nvim', requires = "nvim-lua/plenary.nvim", config = function() require('todo-comments').setup{} end }
-  use { 'kylechui/nvim-surround', config = function() require('nvim-surround').setup{} end }
-  use { 'numToStr/Comment.nvim', config = function() require('Comment').setup{} end }
-  use { 'levouh/tint.nvim', config = function() require('tint').setup{} end }
-  use { 'goolord/alpha-nvim', config = function() require('alpha').setup(require'alpha.themes.startify'.config) end }
-  use { 'kyazdani42/nvim-tree.lua', config = function() require('nvim-tree').setup() end }
-  use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
-  use { 'akinsho/toggleterm.nvim', config = function() require('toggleterm').setup{ start_in_insert = false } end }
-  use { 'brglng/vim-im-select', config = function() vim.g.im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman' end }
-  use 'nvim-lua/popup.nvim'
-  use 'theblob42/drex.nvim'
-  use 'unblevable/quick-scope'
-  use 'mattn/vim-findroot'
+  "nvim-lua/popup.nvim",
+  "theblob42/drex.nvim",
+  "unblevable/quick-scope",
+  "mattn/vim-findroot",
 
-  use {
+  { "kyazdani42/nvim-web-devicons", config = true },
+  { "kylechui/nvim-surround", config = true },
+  { "numToStr/Comment.nvim", config = true },
+  { "levouh/tint.nvim", config = true },
+  { "kyazdani42/nvim-tree.lua", config = true },
+  { "lewis6991/gitsigns.nvim", config = true },
+  { "akinsho/toggleterm.nvim", config = { start_in_insert = false } },
+  { "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim", config = true },
+  { "goolord/alpha-nvim", config = function() require('alpha').setup(require'alpha.themes.startify'.config) end },
+  { "brglng/vim-im-select", config = function() vim.g.im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman' end },
+
+  {
     "folke/noice.nvim",
     event = "VimEnter",
-    config = function()
-      require("noice").setup()
-    end,
-    requires = {
+    config = true,
+    dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
-  }
+  },
 
-  use {
-    'nvim-lualine/lualine.nvim',
+  {
+    "nvim-lualine/lualine.nvim",
     config = function()
       require('lualine').setup{
         options = {
           component_separators = '|' ,
           section_separators = { left = '', right = ''} ,
+          glolbalstatus = true,
         },
       }
     end
-  }
+  },
 
-  use { 'akinsho/bufferline.nvim', config = get_setup("bufferline"), }
-  use { 'kdheepak/lazygit.nvim', config = get_setup("lazygit"), event = { "VimEnter" } }
-  use { 'hkupty/iron.nvim', config = get_setup("iron"), }
-  use { 'kevinhwang91/nvim-bqf', opt = true, ft = 'qf', }
-  use { 'lervag/vimtex', config = get_setup("vimtex"), opt = true, ft = {'tex', 'latex'} }
-  use { 'ryotai25/memolist.vim', config = get_setup("memolist"), }
+  {
+    "akinsho/bufferline.nvim",
+    config = function()
+      require("setup.bufferline")
+    end
+  },
 
-  use {
-    'voldikss/vim-translator',
+  {
+    "kdheepak/lazygit.nvim",
+    config = function()
+      require("setup.lazygit")
+    end,
+    event = { "VimEnter" }
+  },
+
+  {
+    "hkupty/iron.nvim",
+    config = function()
+      require("setup.iron")
+    end,
+  },
+
+  { "kevinhwang91/nvim-bqf", opt = true, ft = 'qf', },
+  { "lervag/vimtex", config = true, opt = true, ft = {'tex', 'latex'} }, -- TODO: change
+
+  {
+    "ryotai25/memolist.vim",
+    config = function()
+      require("setup.memolist")
+    end,
+  },
+
+  {
+    "voldikss/vim-translator",
     config = function()
       vim.g.translator_target_lang = 'ja'
       vim.api.nvim_set_keymap('n', '<Leader>w', '<Plug>TranslateW', { noremap = true})
       vim.api.nvim_set_keymap('v', '<Leader>w', '<Plug>TranslateWV', { noremap = true})
     end
-  }
+  },
 
-  use {
-    'JuliaEditorSupport/julia-vim',
+  {
+    "JuliaEditorSupport/julia-vim",
     config = function()
       vim.g.latex_to_unicode_file_types = {'julia', 'tex', 'latex'}
     end
-  }
+  },
 
-  use {
-    'hasundue/vim-pluto',
-    requires = {
-      'vim-denops/denops.vim'
+  {
+    "hasundue/vim-pluto",
+    dependencies = {
+      "vim-denops/denops.vim"
     },
     ft = 'julia',
     opt = true,
-  }
-
-end)
+  },
+})
