@@ -54,7 +54,7 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-cmdline",
+			{"hrsh7th/cmp-cmdline", commit = "d2dfa338520c99c1f2dc6af9388de081a6e63296"},
       "hrsh7th/cmp-path",
       "onsails/lspkind.nvim",
       "quangnguyen30192/cmp-nvim-ultisnips",
@@ -66,6 +66,7 @@ require("lazy").setup({
     config = function()
       require("setup.cmp")
     end
+    -- config = get_setup("cmp")
   },
 
   {

@@ -4,7 +4,7 @@ let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 ]], false)
 
 require('mason').setup()
-require('mason-lspconfig').setup()
+-- require('mason-lspconfig').setup()
 require("fidget").setup()
 
 require('lspsaga').init_lsp_saga({
@@ -37,14 +37,14 @@ require("mason-lspconfig").setup{
     ensure_installed = {
         "julials",
         "texlab",
-        "sumneko_lua", -- lua
+        "sumneko_lua",
         "pyright",
         "r_language_server",
-        "vimls", -- vim
+        "vimls",
     }
 }
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').sumneko_lua.setup{
   settings = {
     Lua = {
       diagnostics = {
