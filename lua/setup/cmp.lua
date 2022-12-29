@@ -6,6 +6,8 @@ let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 require('mason').setup()
 -- require('mason-lspconfig').setup()
 require("fidget").setup()
+require("neodev").setup()
+
 
 require('lspsaga').init_lsp_saga({
     code_action_lightbulb = {
@@ -44,15 +46,15 @@ require("mason-lspconfig").setup{
     }
 }
 
-require('lspconfig').sumneko_lua.setup{
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = {'vim'},
-      },
-    },
-  },
-}
+-- require('lspconfig').sumneko_lua.setup{
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         globals = {'vim'},
+--       },
+--     },
+--   },
+-- }
 
 vim.diagnostic.config({
   virtual_text = false,

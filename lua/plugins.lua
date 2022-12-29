@@ -61,7 +61,8 @@ require("lazy").setup({
       "sirver/ultisnips",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "glepnir/lspsaga.nvim",
-      "j-hui/fidget.nvim"
+      "j-hui/fidget.nvim",
+      "folke/neodev.nvim"
     },
     config = function()
       require("setup.cmp")
@@ -144,7 +145,14 @@ require("lazy").setup({
   },
 
   { "kevinhwang91/nvim-bqf", opt = true, ft = 'qf', },
-  { "lervag/vimtex", config = true, opt = true, ft = {'tex', 'latex'} }, -- TODO: change
+  {
+    "lervag/vimtex",
+    config = function()
+      require("setup.vimtex")
+    end,
+    opt = true,
+    ft = {'tex', 'latex'}
+  },
 
   {
     "ryotai25/memolist.vim",
