@@ -98,6 +98,8 @@ require("lazy").setup({
   { "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim", config = true },
   { "goolord/alpha-nvim", config = function() require('alpha').setup(require'alpha.themes.startify'.config) end },
   { "brglng/vim-im-select", config = function() vim.g.im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman' end },
+  "dstein64/vim-startuptime",
+
 
   {
     "folke/noice.nvim",
