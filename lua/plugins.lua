@@ -11,11 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
--- local function get_setup(name)
---   return string.format('require("setup.%s")', name)
--- end
-
 require("lazy").setup({
+  "mattn/vim-findroot",
+
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
@@ -85,7 +83,6 @@ require("lazy").setup({
   "nvim-lua/popup.nvim",
   "theblob42/drex.nvim",
   "unblevable/quick-scope",
-  "mattn/vim-findroot",
 
   { "kyazdani42/nvim-web-devicons", config = true },
   { "kylechui/nvim-surround", config = true },
