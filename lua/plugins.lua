@@ -48,7 +48,7 @@ require("lazy").setup({
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "williamboman/mason.nvim",
+      {"williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
       {"neovim/nvim-lspconfig", commit = "3e2cc7061957292850cc386d9146f55458ae9fe3"},
       "hrsh7th/cmp-nvim-lsp",
@@ -61,13 +61,12 @@ require("lazy").setup({
       "sirver/ultisnips",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "glepnir/lspsaga.nvim",
-      "j-hui/fidget.nvim",
-      "folke/neodev.nvim"
+      -- "j-hui/fidget.nvim",
+      {"folke/neodev.nvim", config = true }
     },
     config = function()
       require("setup.cmp")
     end
-    -- config = get_setup("cmp")
   },
 
   {
@@ -98,7 +97,11 @@ require("lazy").setup({
   { "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim", config = true },
   { "goolord/alpha-nvim", config = function() require('alpha').setup(require'alpha.themes.startify'.config) end },
   { "brglng/vim-im-select", config = function() vim.g.im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman' end },
-  "dstein64/vim-startuptime",
+
+  {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime"
+  },
 
 
   {
@@ -176,7 +179,8 @@ require("lazy").setup({
     "JuliaEditorSupport/julia-vim",
     config = function()
       vim.g.latex_to_unicode_file_types = {'julia', 'tex', 'latex'}
-    end
+    end,
+    -- ft = {'julia', 'tex', 'latex'},
   },
 
   {

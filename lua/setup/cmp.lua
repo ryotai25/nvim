@@ -3,10 +3,11 @@ let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
 let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 ]], false)
 
-require('mason').setup()
+-- require('mason').setup()
+-- require("neodev").setup()
+
 -- require('mason-lspconfig').setup()
-require("fidget").setup()
-require("neodev").setup()
+-- require("fidget").setup()
 
 
 require('lspsaga').init_lsp_saga({
@@ -46,16 +47,6 @@ require("mason-lspconfig").setup{
     }
 }
 
--- require('lspconfig').sumneko_lua.setup{
---   settings = {
---     Lua = {
---       diagnostics = {
---         globals = {'vim'},
---       },
---     },
---   },
--- }
-
 vim.diagnostic.config({
   virtual_text = false,
 })
@@ -69,7 +60,6 @@ cmp.setup({
     { name = "buffer" },
     { name = "path" },
     { name = 'nvim_lua'},
-    -- { name = 'cmdline'},
     { name = "ultisnips" },
   },
 
