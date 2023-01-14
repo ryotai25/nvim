@@ -3,19 +3,6 @@ let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
 let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 ]], false)
 
--- require('mason').setup()
--- require("neodev").setup()
-
--- require('mason-lspconfig').setup()
--- require("fidget").setup()
-
-
-require('lspsaga').init_lsp_saga({
-    code_action_lightbulb = {
-        enable = false,
-    }
-})
-
 local keymap = vim.keymap.set
 keymap("n", "gd", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
@@ -34,17 +21,6 @@ require("mason-lspconfig").setup_handlers {
       capabilities = capabilities,
     }
   end,
-}
-
-require("mason-lspconfig").setup{
-    ensure_installed = {
-        "julials",
-        "texlab",
-        "sumneko_lua",
-        "pyright",
-        "r_language_server",
-        "vimls",
-    }
 }
 
 vim.diagnostic.config({

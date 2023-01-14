@@ -47,7 +47,22 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     dependencies = {
       {"williamboman/mason.nvim", config = true },
-      "williamboman/mason-lspconfig.nvim",
+
+      {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+          ensure_installed = {
+            "julials",
+            "texlab",
+            "sumneko_lua",
+            "pyright",
+            "r_language_server",
+            "vimls",
+            "bashls"
+          }
+        }
+      },
+
       {"neovim/nvim-lspconfig", commit = "3e2cc7061957292850cc386d9146f55458ae9fe3"},
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
@@ -58,7 +73,16 @@ require("lazy").setup({
       "quangnguyen30192/cmp-nvim-ultisnips",
       "sirver/ultisnips",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-      "glepnir/lspsaga.nvim",
+
+      {
+        "glepnir/lspsaga.nvim",
+        opts = {
+          lightbulb = {
+            enable = false
+          }
+        }
+      },
+
       -- "j-hui/fidget.nvim",
       {"folke/neodev.nvim", config = true }
     },
@@ -90,7 +114,7 @@ require("lazy").setup({
   { "levouh/tint.nvim", config = true },
   { "kyazdani42/nvim-tree.lua", config = true },
   { "lewis6991/gitsigns.nvim", config = true },
-  { "akinsho/toggleterm.nvim", config = { start_in_insert = false } },
+  { "akinsho/toggleterm.nvim", opts = { start_in_insert = false } },
   { "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim", config = true },
   { "goolord/alpha-nvim", config = function() require('alpha').setup(require'alpha.themes.startify'.config) end },
   { "brglng/vim-im-select", config = function() vim.g.im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman' end },
@@ -99,7 +123,6 @@ require("lazy").setup({
     "dstein64/vim-startuptime",
     cmd = "StartupTime"
   },
-
 
   {
     "folke/noice.nvim",
