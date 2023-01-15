@@ -21,7 +21,11 @@ return {
 
   {
     "unblevable/quick-scope",
-    event = { "VeryLazy" }
+    event = { "VeryLazy" },
+    config = function()
+      vim.g.qs_filetype_blacklist = {'alpha', 'help'}
+      vim.g.qs_buftype_blacklist = {'terminal', 'nowrite'}
+    end
   },
 
   {
