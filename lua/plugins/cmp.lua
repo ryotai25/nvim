@@ -31,7 +31,7 @@ return {
 
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-			{"hrsh7th/cmp-cmdline", commit = "d2dfa338520c99c1f2dc6af9388de081a6e63296"},
+      {"hrsh7th/cmp-cmdline", commit = "d2dfa338520c99c1f2dc6af9388de081a6e63296"},
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "onsails/lspkind.nvim",
@@ -55,8 +55,8 @@ return {
       { "folke/neodev.nvim", config = true },
 
     },
-    config = function()
 
+    config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities(
       vim.lsp.protocol.make_client_capabilities()
       )

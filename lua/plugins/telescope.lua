@@ -86,7 +86,6 @@ return {
       keymap('n', '<Leader>pr', '<Cmd>Telescope project<CR>', { noremap = true })
       keymap('n', '<Leader>fh', '<Cmd>Telescope help_tags<CR>', { noremap = true })
       keymap('n', '<Leader>c', '<Cmd>Telescope command_palette<CR>', { noremap = true })
-
       keymap('n', '<Leader>z', '<Cmd>Telescope z list<CR>', { noremap = true })
       keymap('n', '<Leader>q', '<Cmd>Telescope ghq list<CR>', { noremap = true })
     end,

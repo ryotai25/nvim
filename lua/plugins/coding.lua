@@ -29,7 +29,14 @@ return {
   },
 
   {
-  "mattn/vim-findroot",
+    "mattn/vim-findroot",
     event = { "VeryLazy" }
   },
+
+  {
+    "folke/zen-mode.nvim",
+    config = true,
+    cmd = "ZenMode"
+  }
+
 }
