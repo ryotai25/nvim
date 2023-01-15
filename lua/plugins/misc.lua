@@ -4,7 +4,11 @@ return {
     config = true
   },
 
-  { "kyazdani42/nvim-tree.lua", config = true },
+  {
+    "kyazdani42/nvim-tree.lua",
+    config = true,
+    event = { "VeryLazy" },
+  },
   {
     "akinsho/toggleterm.nvim",
     opts = {
@@ -33,8 +37,6 @@ return {
       require('alpha').setup(require'alpha.themes.startify'.config)
     end
   },
-
-  "nvim-lua/popup.nvim",
 
   {
     "theblob42/drex.nvim",
@@ -71,7 +73,6 @@ return {
               command = {"fish"}
             }
           },
-          -- repl_open_cmd = require('iron.view').curry.bottom(40),
           repl_open_cmd = 'belowright 72 vsplit',
         },
 
@@ -89,19 +90,22 @@ return {
         highlight = {
           italic = true
         }
-
       }
-      vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>IronFocus<CR>', {noremap = true})
     end,
-    event = { "VeryLazy" },
+    keys = {
+      { "<leader>r", "<cmd>IronFocus<CR>", }
+    }
   },
 
-  { "kevinhwang91/nvim-bqf", opt = true, ft = 'qf', },
+  {
+    "kevinhwang91/nvim-bqf",
+    opt = true,
+    ft = 'qf'
+  },
 
   {
     "lervag/vimtex",
     config = function()
-      -- require("setup.vimtex")
       vim.g.vimtex_compiler_latexmk = {
         build_dir = 'build',
         continuous = '1',
@@ -118,7 +122,6 @@ return {
       augroup END
       ]], false)
     end,
-    -- opt = true,
     ft = {'tex', 'latex'}
   },
 
@@ -150,7 +153,7 @@ return {
     config = function()
       vim.g.latex_to_unicode_file_types = {'julia', 'tex', 'latex'}
     end,
-    -- ft = {'julia', 'tex', 'latex'},
+    event = { "VeryLazy" },
   },
 
   {

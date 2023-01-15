@@ -27,4 +27,4 @@ keymap('n', '<C-w><C-,>', '<C-w><', { noremap = true })
 keymap('c', '<C-p>', '<Up>', { noremap = true })
 keymap('c', '<C-n>', '<Down>', { noremap = true })
 
-keymap('c', '3b3b', '<C-u>undo<CR>', { noremap = true }) -- 起動時にキーが入力されてしまう本体の不具合？を回避
+-- keymap('c', '3b3b', '<C-u>undo<CR>', { noremap = true }) -- 起動時にキーが入力されてしまう本体の不具合？を回避

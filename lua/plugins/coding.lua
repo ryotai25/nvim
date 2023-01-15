@@ -19,6 +19,13 @@ return {
     event = { "VeryLazy" }
   },
 
-  "unblevable/quick-scope",
+  {
+    "unblevable/quick-scope",
+    event = { "VeryLazy" }
+  },
+
+  {
   "mattn/vim-findroot",
+    event = { "VeryLazy" }
+  },
 }

@@ -12,7 +12,6 @@ return {
       "LinArcX/telescope-command-palette.nvim" ,
     },
     config = function()
-      -- require("setup.telescope")
       local actions = require('telescope.actions')
       require('telescope').setup{
           defaults = {

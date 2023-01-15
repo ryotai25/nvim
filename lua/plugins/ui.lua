@@ -7,7 +7,7 @@ return {
           section_separators = { left = '', right = ''} ,
           glolbalstatus = true,
         },
-    }
+    },
   },
 
   {
@@ -28,7 +28,8 @@ return {
       vim.api.nvim_set_keymap('n', '<C-k>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
       vim.api.nvim_set_keymap('n', '<S-Right>', '<Cmd>BufferLineCycleNext<CR>', { noremap = true })
       vim.api.nvim_set_keymap('n', '<S-Left>', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true })
-    end
+    end,
+    event = { "VeryLazy" },
   },
 
   {
