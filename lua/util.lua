@@ -24,7 +24,6 @@ augroup remember_folds
 augroup END
 ]], false)
 
-
 api.nvim_exec( [[
 au FileType qf call AdjustWindowHeight(2, 5)
 function! AdjustWindowHeight(minheight, maxheight)

@@ -11,6 +11,26 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require('plugins')
+require("lazy").setup({
+  spec = {
+    {import = "plugins"}
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      }
+    }
+  }
+})
+
+require("lazy").setup("plugins")
 require('util')
 require('mapping')
