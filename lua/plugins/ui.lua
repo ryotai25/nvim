@@ -40,4 +40,6 @@ return {
       "rcarriga/nvim-notify",
     }
   },
+
+  { "levouh/tint.nvim", config = true },
 }

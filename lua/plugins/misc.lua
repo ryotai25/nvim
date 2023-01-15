@@ -4,10 +4,8 @@ return {
     config = true
   },
 
-  { "kylechui/nvim-surround", config = true },
-  { "numToStr/Comment.nvim", config = true },
-  { "levouh/tint.nvim", config = true },
   { "kyazdani42/nvim-tree.lua", config = true },
+  { "akinsho/toggleterm.nvim", opts = { start_in_insert = false } },
 
   {
     "lewis6991/gitsigns.nvim",
@@ -15,7 +13,6 @@ return {
     event = { "VimEnter" }
   },
 
-  { "akinsho/toggleterm.nvim", opts = { start_in_insert = false } },
 
   {
     "folke/todo-comments.nvim",
@@ -30,16 +27,9 @@ return {
     end
   },
 
-  {
-    "brglng/vim-im-select",
-    config = function()
-      vim.g.im_select_default = 'com.apple.inputmethod.Kotoeri.RomajiTyping.Roman'
-    end },
-
   "nvim-lua/popup.nvim",
   "theblob42/drex.nvim",
-  "unblevable/quick-scope",
-  "mattn/vim-findroot",
+
   {
     "dstein64/vim-startuptime",
     cmd = "StartupTime"
@@ -48,7 +38,6 @@ return {
   {
     "kdheepak/lazygit.nvim",
     config = function()
-      -- require("setup.lazygit")
       vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>LazyGit<CR>', {noremap = true})
       vim.g.lazygit_floating_window_winblend = 0
       vim.g.lazygit_floating_window_scaling_factor = 0.9
@@ -62,7 +51,6 @@ return {
   {
     "hkupty/iron.nvim",
     config = function()
-      -- require("setup.iron")
       require("iron.core").setup {
         config = {
           should_map_plug = false,
