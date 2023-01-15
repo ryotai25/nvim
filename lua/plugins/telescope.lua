@@ -91,6 +91,6 @@ return {
       keymap('n', '<Leader>z', '<Cmd>Telescope z list<CR>', { noremap = true })
       keymap('n', '<Leader>q', '<Cmd>Telescope ghq list<CR>', { noremap = true })
     end,
-    event = "VimEnter",
+    event = "VeryLazy",
   },
 }

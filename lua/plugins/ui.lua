@@ -33,12 +33,12 @@ return {
 
   {
     "folke/noice.nvim",
-    event = "VimEnter",
     config = true,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-    }
+    },
+    event = { "VeryLazy" },
   },
 
   { "levouh/tint.nvim", config = true },

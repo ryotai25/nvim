@@ -5,19 +5,26 @@ return {
   },
 
   { "kyazdani42/nvim-tree.lua", config = true },
-  { "akinsho/toggleterm.nvim", opts = { start_in_insert = false } },
+  {
+    "akinsho/toggleterm.nvim",
+    opts = {
+      start_in_insert = false
+    },
+    event = { "VeryLazy" },
+  },
 
   {
     "lewis6991/gitsigns.nvim",
     config = true,
-    event = { "VimEnter" }
+    event = { "VeryLazy" },
   },
 
 
   {
     "folke/todo-comments.nvim",
     dependencies = "nvim-lua/plenary.nvim",
-    config = true
+    config = true,
+    event = { "VeryLazy" },
   },
 
   {
@@ -28,7 +35,11 @@ return {
   },
 
   "nvim-lua/popup.nvim",
-  "theblob42/drex.nvim",
+
+  {
+    "theblob42/drex.nvim",
+    event = { "VeryLazy" },
+  },
 
   {
     "dstein64/vim-startuptime",
@@ -45,7 +56,7 @@ return {
       vim.g.lazygit_floating_window_use_plenary = 0
       vim.g.lazygit_use_neovim_remote = 1
     end,
-    event = { "VimEnter" }
+    event = { "VeryLazy" },
   },
 
   {
@@ -82,6 +93,7 @@ return {
       }
       vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>IronFocus<CR>', {noremap = true})
     end,
+    event = { "VeryLazy" },
   },
 
   { "kevinhwang91/nvim-bqf", opt = true, ft = 'qf', },
@@ -120,6 +132,7 @@ return {
       vim.api.nvim_set_keymap('n', '<Leader>ml',  ':MemoList<CR>', {noremap = true})
       vim.api.nvim_set_keymap('n', '<Leader>mg',  ':MemoGrep<CR>', {noremap = true})
     end,
+    event = { "VeryLazy" },
   },
 
   {
@@ -128,7 +141,8 @@ return {
       vim.g.translator_target_lang = 'ja'
       vim.api.nvim_set_keymap('n', '<Leader>w', '<Plug>TranslateW', { noremap = true})
       vim.api.nvim_set_keymap('v', '<Leader>w', '<Plug>TranslateWV', { noremap = true})
-    end
+    end,
+    event = { "VeryLazy" },
   },
 
   {

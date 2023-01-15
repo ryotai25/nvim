@@ -52,6 +52,8 @@ return {
 
       "hrsh7th/cmp-nvim-lua",
 
+      { "folke/neodev.nvim", config = true },
+
     },
     config = function()
 
@@ -119,9 +121,9 @@ return {
           { name = 'buffer' }
         }
       })
-    end
+    end,
+    event = "VeryLazy",
   },
-
 
   {
     "glepnir/lspsaga.nvim",
@@ -142,11 +144,8 @@ return {
       keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
       keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
       keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-    end
-  },
+    end,
 
-  {
-    "folke/neodev.nvim",
-    config = true,
-  }
+    event = "VeryLazy",
+  },
 }
