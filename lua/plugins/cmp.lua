@@ -54,6 +54,34 @@ return {
 
       { "folke/neodev.nvim", config = true },
 
+      {
+        "zbirenbaum/copilot.lua",
+        config = function()
+          require('copilot').setup({
+            suggestion = {
+              -- enabled = false,
+              enabled = true,
+              auto_trigger = true,
+              keymap = {
+                accept = "<C-l>",
+                next = "<C-]>",
+                prev = "<C-[>",
+              },
+
+            panel = {
+              enabled = false,
+            },
+
+          },
+        })
+      end,
+      event = "VeryLazy",
+      },
+
+      -- {
+      --   "zbirenbaum/copilot-cmp",
+      --   config = true,
+      -- }
     },
 
     config = function()
@@ -78,6 +106,7 @@ return {
           { name = "path" },
           { name = 'nvim_lua'},
           { name = "ultisnips" },
+          -- { name = "copilot" },
         },
 
         mapping = cmp.mapping.preset.insert({
@@ -95,8 +124,9 @@ return {
         formatting = {
           format = require("lspkind").cmp_format({
             mode = 'symbol',
-            maxwidth = 50,
+            max_width = 50,
             ellipsis_char = '...',
+            symbol_map = { Copilot = "" }
           })
         },
 
