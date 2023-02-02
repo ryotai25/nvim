@@ -44,11 +44,14 @@ return {
           let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
           let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
           ]], false)
-          vim.g.UltiSnipsExpandTrigger = '<C-j>'
-          vim.g.UltiSnipsJumpForwardTrigger = '<C-j>'
-          vim.g.UltiSnipsJumpBackwardTrigger = '<C-k>'
+          -- TODO : うまく動かない
+
+          -- vim.g.UltiSnipsExpandTrigger = '<c-j>'
+          -- vim.g.UltiSnipsJumpForwardTrigger = '<c-j>'
+          -- vim.g.UltiSnipsJumpBackwardTrigger = '<c-k>'
         end
       },
+
 
       "hrsh7th/cmp-nvim-lua",
 
@@ -59,7 +62,6 @@ return {
         config = function()
           require('copilot').setup({
             suggestion = {
-              -- enabled = false,
               enabled = true,
               auto_trigger = true,
               keymap = {
@@ -71,7 +73,6 @@ return {
             panel = {
               enabled = false,
             },
-
           },
         })
       end,
