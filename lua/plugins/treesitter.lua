@@ -16,6 +16,7 @@ return {
           "vim",
           "latex",
           "markdown",
+          "markdown_inline",
           "json",
           "fish",
           "python",
